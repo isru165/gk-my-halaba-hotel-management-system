@@ -792,3 +792,174 @@ System shall display previous reservations and stays.
 Priority: Medium
 End of Part 1
 
+5.6 Room Management Module
+FR-016 Add Room
+Description
+The system shall allow authorized administrators to add new rooms to the hotel inventory.
+Priority
+High
+Input
+•	Room Number 
+•	Room Type 
+•	Floor 
+•	Price per Night 
+•	Maximum Guests 
+•	Room Status 
+•	Description 
+•	Photos 
+Output
+New room successfully added.
+Acceptance Criteria
+•	Room number must be unique. 
+•	Price must be greater than zero. 
+•	Room is immediately available for reservation. 
+FR-017 Update Room Information
+The system shall allow administrators to modify room information.
+Priority: High
+Fields that may be updated include:
+•	Room Price 
+•	Room Type 
+•	Description 
+•	Photos 
+•	Status 
+FR-018 Delete Room
+Only administrators may permanently remove a room from the system.
+Priority: High
+FR-019 View Room Details
+The system shall display complete room information including:
+•	Room Number 
+•	Room Type 
+•	Price 
+•	Availability 
+•	Images 
+•	Facilities 
+•	Current Status 
+Priority: Medium
+FR-020 Search Room
+Users shall search rooms using:
+•	Room Number 
+•	Room Type 
+•	Price Range 
+•	Floor 
+•	Availability 
+Priority: High
+FR-021 Room Availability
+The system shall automatically determine room availability based on reservations and guest occupancy.
+Priority: High
+FR-022 Room Status Management
+Each room shall have one of the following statuses:
+•	Available 
+•	Reserved 
+•	Occupied 
+•	Cleaning 
+•	Maintenance 
+Priority: High
+FR-023 Room Photo Management
+Administrators shall upload multiple images for each room.
+Priority: Medium
+FR-024 Room Pricing
+Administrators shall modify room prices at any time.
+Priority: High
+
+FR-025 Room Statistics
+The dashboard shall display:
+•	Total Rooms 
+•	Available Rooms 
+•	Reserved Rooms 
+•	Occupied Rooms 
+•	Rooms Under Maintenance 
+Priority: Medium
+
+5.7 Reservation Management Module
+FR-026 Create Reservation
+Guests or receptionists shall create room reservations.
+Required Information:
+•	Guest Name 
+•	Phone Number 
+•	Check-in Date 
+•	Check-out Date 
+•	Room Type 
+•	Number of Guests 
+•	Special Requests 
+Priority: High
+FR-027 Reservation Validation
+The system shall verify:
+•	Room availability 
+•	Date conflicts 
+•	Maximum occupancy 
+•	Valid booking dates 
+Priority: High
+FR-028 Edit Reservation
+Receptionists may modify reservation details before check-in.
+Priority: High
+FR-029 Cancel Reservation
+Reservations may be cancelled before arrival.
+Priority: High
+FR-030 Reservation Approval
+Reservations requiring manual confirmation shall be reviewed by hotel staff.
+Priority: Medium
+FR-031 Reservation Confirmation
+After approval, the system shall:
+•	Generate Reservation ID 
+•	Send confirmation 
+•	Update room availability 
+Priority: High
+FR-032 Reservation History
+The system shall maintain complete reservation history.
+Priority: Medium
+FR-033 Reservation Search
+Search using:
+•	Reservation ID 
+•	Guest Name 
+•	Phone Number 
+•	Room Number 
+•	Check-in Date 
+Priority: High
+FR-034 Reservation Calendar
+Receptionists shall view reservations using a calendar interface.
+Priority: Medium
+FR-035 Online Booking
+Website visitors shall book rooms online.
+Features include:
+•	Room Selection 
+•	Availability Check 
+•	Booking Form 
+•	Payment Option 
+•	Confirmation 
+Priority: High
+5.8 Check-in Management Module
+FR-036 Guest Check-in
+Receptionists shall check guests into reserved or available rooms.
+Required Information:
+•	Reservation ID (if available) 
+•	Guest Verification 
+•	Assigned Room 
+•	Payment Status 
+Priority: High
+FR-037 Room Assignment
+The system shall assign an available room automatically or allow manual selection.
+Priority: High
+
+
+FR-038 Check-in Validation
+The system shall verify:
+•	Room availability 
+•	Reservation validity 
+•	Payment requirements 
+•	Guest identity 
+Priority: High
+FR-039 Update Room Status
+After successful check-in, the room status shall automatically change from:
+Available → Occupied
+Priority: High
+
+FR-040 Check-in Receipt
+The system shall generate a check-in confirmation containing:
+•	Guest Name 
+•	Room Number 
+•	Check-in Date 
+•	Expected Check-out Date 
+•	Reservation Number 
+Priority: Medium
+End of Chapter 5 – Part 2
+
