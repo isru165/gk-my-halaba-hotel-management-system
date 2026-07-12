@@ -1605,6 +1605,6 @@ The non-functional requirements defined in this chapter will later be linked to:
 •	Security Policies 
 •	Deployment Architecture 
 This traceability ensures that every quality requirement can be validated during system development and testing.
-6.8 Chapter Summary
-This chapter defined the first set of non-functional requirements for the GK My Halaba Hotel Management Information System. These requirements establish expectations for system performance, security, availability, reliability, and usability. Together with the functional requirements presented in Chapter 5, they provide a comprehensive specification that will guide the design, implementation, testing, and deployment of the system.
+6.18 Chapter Summary
+This chapter defined 44 non-functional requirements (NFR-001 to NFR-044) for the GK My Halaba Hotel Management Information System. These requirements specify the quality standards that the system must satisfy, including performance, security, availability, reliability, usability, maintainability, scalability, compatibility, portability, accessibility, backup and recovery, legal compliance, and testing. Together with the functional requirements defined in Chapter 5, they provide a comprehensive specification that will guide the design, implementation, verification, deployment, and long-term maintenance of the system.
 

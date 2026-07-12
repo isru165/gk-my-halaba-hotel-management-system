@@ -1607,5 +1607,475 @@ This traceability ensures that every quality requirement can be validated during
 6.8 Chapter Summary
 This chapter defined the first set of non-functional requirements for the GK My Halaba Hotel Management Information System. These requirements establish expectations for system performance, security, availability, reliability, and usability. Together with the functional requirements presented in Chapter 5, they provide a comprehensive specification that will guide the design, implementation, testing, and deployment of the system.
 
+6.9 Maintainability Requirements
+Maintainability requirements ensure that the system can be efficiently modified, corrected, improved, and extended throughout its lifecycle.
+NFR-023 – Modular Architecture
+Description
+The system shall be developed using a modular architecture, where each functional component operates independently with well-defined interfaces.
+Priority
+High
+Rationale
+A modular design simplifies maintenance, testing, debugging, and future enhancements.
+Verification Method
+Architecture Review
+NFR-024 – Code Readability
+Description
+The source code shall follow established coding standards and naming conventions.
+Requirements
+•	Meaningful variable names 
+•	Consistent indentation 
+•	Proper comments 
+•	Organized folder structure 
+Priority
+High
+Verification Method
+Code Review
+NFR-025 – Documentation
+Description
+All major software components shall be properly documented.
+Documentation Includes
+•	Source Code Comments 
+•	API Documentation 
+•	Database Documentation 
+•	Installation Guide 
+•	User Manual 
+•	Administrator Manual 
+Priority
+High
+Verification Method
+Documentation Review
+NFR-026 – Version Control
+Description
+All source code shall be maintained using Git and GitHub.
+Requirements
+•	Commit History 
+•	Branch Management 
+•	Version Tracking 
+•	Change History 
+Priority
+High
+Verification Method
+Repository Review
+6.10 Scalability Requirements
+NFR-027 – Future Expansion
+Description
+The architecture shall support future expansion without major redesign.
+Future Modules
+•	Mobile Application 
+•	Inventory System 
+•	Payroll System 
+•	AI Chatbot 
+•	Multi-Branch Support 
+Priority
+High
+Verification Method
+Architecture Review
+NFR-028 – Database Scalability
+Description
+The database shall efficiently support increasing amounts of operational data.
+Priority
+High
+Verification Method
+Database Performance Testing
+NFR-029 – User Scalability
+Description
+The system shall support growth in the number of users without significant performance degradation.
+Priority
+Medium
+Verification Method
+Load Testing
+6.11 Compatibility Requirements
+NFR-030 – Browser Compatibility
+Description
+The website shall function correctly on modern web browsers.
+Supported Browsers
+•	Google Chrome 
+•	Microsoft Edge 
+•	Mozilla Firefox 
+•	Safari 
+Priority
+High
+Verification Method
+Cross-Browser Testing
+
+
+NFR-031 – Operating System Compatibility
+Description
+The system shall operate correctly on major operating systems.
+Supported Systems
+•	Windows 
+•	Linux 
+•	Android 
+•	iOS 
+•	macOS 
+Priority
+Medium
+Verification Method
+Compatibility Testing
+6.12 Portability Requirements
+NFR-032 – Server Portability
+Description
+The application shall be deployable on different hosting environments with minimal configuration changes.
+Priority
+Medium
+Verification Method
+Deployment Testing
+NFR-033 – Database Portability
+Description
+Database backups shall support migration to another server when required.
+Priority
+Medium
+Verification Method
+Backup Restoration Testing
+6.13 Accessibility Requirements
+NFR-034 – Accessible User Interface
+Description
+The website shall provide an accessible interface for users with different levels of technical experience.
+Requirements
+•	Readable typography 
+•	High color contrast 
+•	Clear navigation 
+•	Keyboard accessibility where applicable 
+Priority
+Medium
+Verification Method
+Accessibility Review
+
+NFR-035 – Responsive Accessibility
+Description
+The system shall remain usable on mobile devices without loss of functionality.
+Priority
+High
+Verification Method
+Responsive Testing
+6.14 Backup and Recovery Requirements
+NFR-036 – Automatic Backup
+Description
+The system shall automatically back up the database according to a predefined schedule.
+Frequency
+•	Daily 
+•	Weekly 
+•	Monthly 
+Priority
+High
+Verification Method
+Backup Testing
+NFR-037 – Manual Backup
+Description
+Administrators shall create manual backups whenever necessary.
+Priority
+High
+Verification Method
+Functional Testing
+NFR-038 – Disaster Recovery
+Description
+The system shall restore business operations after hardware or software failures.
+Recovery Objectives
+•	Restore Database 
+•	Restore Uploaded Files 
+•	Restore Configuration 
+Priority
+High
+Verification Method
+Recovery Testing
+6.15 Legal and Privacy Requirements
+NFR-039 – Data Privacy
+Description
+The system shall protect guest personal information from unauthorized disclosure.
+Priority
+High
+Verification Method
+Security Audit
+NFR-040 – Audit Trail
+Description
+The system shall maintain records of significant system activities.
+Logged Activities
+•	User Login 
+•	Reservation Creation 
+•	Payment Processing 
+•	User Management 
+•	Room Updates 
+Priority
+High
+Verification Method
+Audit Log Review
+6.16 Testing Requirements
+NFR-041 – Unit Testing
+Description
+Individual software components shall be tested before integration.
+Priority
+High
+Verification Method
+Developer Testing
+NFR-042 – Integration Testing
+Description
+Integrated modules shall be tested to verify correct communication.
+Priority
+High
+Verification Method
+Integration Testing
+NFR-043 – System Testing
+Description
+The complete system shall be tested before deployment.
+Priority
+High
+Verification Method
+System Testing
+NFR-044 – User Acceptance Testing (UAT)
+Description
+Hotel management shall validate that the system meets business requirements before production deployment.
+Priority
+High
+Verification Method
+User Acceptance Testing
+6.17 Traceability Matrix
+The non-functional requirements defined in this chapter shall be mapped to:
+Requirement Type	Reference
+Functional Requirements	FR-001 – FR-100
+System Architecture	Chapter 4
+Use Cases	Chapter 9
+Database Design	Chapter 11
+Test Cases	Chapter 16
+Deployment Architecture	Chapter 18
+This traceability ensures that every quality requirement is considered during design, implementation, testing, deployment, and maintenance.
+
+6.18 Chapter Summary
+This chapter defined 44 non-functional requirements (NFR-001 to NFR-044) for the GK My Halaba Hotel Management Information System. These requirements specify the quality standards that the system must satisfy, including performance, security, availability, reliability, usability, maintainability, scalability, compatibility, portability, accessibility, backup and recovery, legal compliance, and testing. Together with the functional requirements defined in Chapter 5, they provide a comprehensive specification that will guide the design, implementation, verification, deployment, and long-term maintenance of the system.
+
+
+6.9 Maintainability Requirements
+Maintainability requirements ensure that the system can be efficiently modified, corrected, improved, and extended throughout its lifecycle.
+NFR-023 – Modular Architecture
+Description
+The system shall be developed using a modular architecture, where each functional component operates independently with well-defined interfaces.
+Priority
+High
+Rationale
+A modular design simplifies maintenance, testing, debugging, and future enhancements.
+Verification Method
+Architecture Review
+NFR-024 – Code Readability
+Description
+The source code shall follow established coding standards and naming conventions.
+Requirements
+•	Meaningful variable names 
+•	Consistent indentation 
+•	Proper comments 
+•	Organized folder structure 
+Priority
+High
+Verification Method
+Code Review
+NFR-025 – Documentation
+Description
+All major software components shall be properly documented.
+Documentation Includes
+•	Source Code Comments 
+•	API Documentation 
+•	Database Documentation 
+•	Installation Guide 
+•	User Manual 
+•	Administrator Manual 
+Priority
+High
+Verification Method
+Documentation Review
+NFR-026 – Version Control
+Description
+All source code shall be maintained using Git and GitHub.
+Requirements
+•	Commit History 
+•	Branch Management 
+•	Version Tracking 
+•	Change History 
+Priority
+High
+Verification Method
+Repository Review
+6.10 Scalability Requirements
+NFR-027 – Future Expansion
+Description
+The architecture shall support future expansion without major redesign.
+Future Modules
+•	Mobile Application 
+•	Inventory System 
+•	Payroll System 
+•	AI Chatbot 
+•	Multi-Branch Support 
+Priority
+High
+Verification Method
+Architecture Review
+NFR-028 – Database Scalability
+Description
+The database shall efficiently support increasing amounts of operational data.
+Priority
+High
+Verification Method
+Database Performance Testing
+NFR-029 – User Scalability
+Description
+The system shall support growth in the number of users without significant performance degradation.
+Priority
+Medium
+Verification Method
+Load Testing
+6.11 Compatibility Requirements
+NFR-030 – Browser Compatibility
+Description
+The website shall function correctly on modern web browsers.
+Supported Browsers
+•	Google Chrome 
+•	Microsoft Edge 
+•	Mozilla Firefox 
+•	Safari 
+Priority
+High
+Verification Method
+Cross-Browser Testing
+
+
+NFR-031 – Operating System Compatibility
+Description
+The system shall operate correctly on major operating systems.
+Supported Systems
+•	Windows 
+•	Linux 
+•	Android 
+•	iOS 
+•	macOS 
+Priority
+Medium
+Verification Method
+Compatibility Testing
+6.12 Portability Requirements
+NFR-032 – Server Portability
+Description
+The application shall be deployable on different hosting environments with minimal configuration changes.
+Priority
+Medium
+Verification Method
+Deployment Testing
+NFR-033 – Database Portability
+Description
+Database backups shall support migration to another server when required.
+Priority
+Medium
+Verification Method
+Backup Restoration Testing
+6.13 Accessibility Requirements
+NFR-034 – Accessible User Interface
+Description
+The website shall provide an accessible interface for users with different levels of technical experience.
+Requirements
+•	Readable typography 
+•	High color contrast 
+•	Clear navigation 
+•	Keyboard accessibility where applicable 
+Priority
+Medium
+Verification Method
+Accessibility Review
+
+NFR-035 – Responsive Accessibility
+Description
+The system shall remain usable on mobile devices without loss of functionality.
+Priority
+High
+Verification Method
+Responsive Testing
+6.14 Backup and Recovery Requirements
+NFR-036 – Automatic Backup
+Description
+The system shall automatically back up the database according to a predefined schedule.
+Frequency
+•	Daily 
+•	Weekly 
+•	Monthly 
+Priority
+High
+Verification Method
+Backup Testing
+NFR-037 – Manual Backup
+Description
+Administrators shall create manual backups whenever necessary.
+Priority
+High
+Verification Method
+Functional Testing
+NFR-038 – Disaster Recovery
+Description
+The system shall restore business operations after hardware or software failures.
+Recovery Objectives
+•	Restore Database 
+•	Restore Uploaded Files 
+•	Restore Configuration 
+Priority
+High
+Verification Method
+Recovery Testing
+6.15 Legal and Privacy Requirements
+NFR-039 – Data Privacy
+Description
+The system shall protect guest personal information from unauthorized disclosure.
+Priority
+High
+Verification Method
+Security Audit
+NFR-040 – Audit Trail
+Description
+The system shall maintain records of significant system activities.
+Logged Activities
+•	User Login 
+•	Reservation Creation 
+•	Payment Processing 
+•	User Management 
+•	Room Updates 
+Priority
+High
+Verification Method
+Audit Log Review
+6.16 Testing Requirements
+NFR-041 – Unit Testing
+Description
+Individual software components shall be tested before integration.
+Priority
+High
+Verification Method
+Developer Testing
+NFR-042 – Integration Testing
+Description
+Integrated modules shall be tested to verify correct communication.
+Priority
+High
+Verification Method
+Integration Testing
+NFR-043 – System Testing
+Description
+The complete system shall be tested before deployment.
+Priority
+High
+Verification Method
+System Testing
+NFR-044 – User Acceptance Testing (UAT)
+Description
+Hotel management shall validate that the system meets business requirements before production deployment.
+Priority
+High
+Verification Method
+User Acceptance Testing
+6.17 Traceability Matrix
+The non-functional requirements defined in this chapter shall be mapped to:
+Requirement Type	Reference
+Functional Requirements	FR-001 – FR-100
+System Architecture	Chapter 4
+Use Cases	Chapter 9
+Database Design	Chapter 11
+Test Cases	Chapter 16
+Deployment Architecture	Chapter 18
+This traceability ensures that every quality requirement is considered during design, implementation, testing, deployment, and maintenance.
+
+6.18 Chapter Summary
+This chapter defined 44 non-functional requirements (NFR-001 to NFR-044) for the GK My Halaba Hotel Management Information System. These requirements specify the quality standards that the system must satisfy, including performance, security, availability, reliability, usability, maintainability, scalability, compatibility, portability, accessibility, backup and recovery, legal compliance, and testing. Together with the functional requirements defined in Chapter 5, they provide a comprehensive specification that will guide the design, implementation, verification, deployment, and long-term maintenance of the system.
 
 
