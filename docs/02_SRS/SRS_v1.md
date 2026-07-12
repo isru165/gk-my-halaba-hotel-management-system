@@ -3493,6 +3493,296 @@ Each use case is linked to the corresponding Functional Requirements and Busines
 9.46 Chapter Conclusion
 The use case specifications presented in this chapter establish the behavioral foundation of the GK My Halaba Hotel Management Information System. Together with the functional and non-functional requirements defined in previous chapters, they provide a comprehensive blueprint for developing a secure, scalable, and user-friendly hotel management solution.
 
+CHAPTER 10 – PART 4
+COMPONENT, DEPLOYMENT, PACKAGE, AND STATE MACHINE DIAGRAMS
+10.38 Component Diagram
+Introduction
+The Component Diagram presents the high-level software architecture of the GK My Halaba Hotel Management Information System (HMIS). It illustrates the major software components, their responsibilities, interfaces, and dependencies.
+The system follows the Model-View-Controller (MVC) architectural pattern provided by the Laravel Framework. This layered architecture separates presentation, business logic, and data access, resulting in a modular, maintainable, scalable, and secure application.
+The Component Diagram provides developers with a clear understanding of how the software modules collaborate to deliver hotel management services.
+Objectives
+The Component Diagram aims to:
+•	Illustrate the overall software architecture. 
+•	Show the relationships among major system modules. 
+•	Improve maintainability and scalability. 
+•	Support modular software development. 
+•	Simplify future enhancements. 
+Major Software Components
+1. Presentation Layer
+This layer provides the user interface through which users interact with the system.
+Components include:
+•	Home Page 
+•	About Page 
+•	Room Listing 
+•	Online Booking Page 
+•	Restaurant Page 
+•	Gallery 
+•	Blog 
+•	Contact Page 
+•	Authentication Pages 
+•	Administrator Dashboard 
+•	Reception Dashboard 
+•	Manager Dashboard 
+•	Owner Dashboard 
+2. Business Logic Layer
+This layer processes business rules and application logic.
+Modules include:
+•	Authentication Service 
+•	User Management Service 
+•	Reservation Service 
+•	Guest Management Service 
+•	Room Management Service 
+•	Payment Service 
+•	Restaurant Service 
+•	Invoice Service 
+•	Reporting Service 
+•	Notification Service 
+•	Website Content Management 
+•	Audit Service 
+•	Backup Service 
+3. Data Access Layer
+Responsible for communicating with the MySQL database.
+Repositories include:
+•	User Repository 
+•	Role Repository 
+•	Guest Repository 
+•	Reservation Repository 
+•	Room Repository 
+•	Room Type Repository 
+•	Payment Repository 
+•	Invoice Repository 
+•	Restaurant Repository 
+•	Gallery Repository 
+•	Blog Repository 
+•	Contact Repository 
+•	Audit Repository 
+4. Database Layer
+Stores all hotel operational information.
+Main database tables include:
+•	users 
+•	roles 
+•	guests 
+•	rooms 
+•	room_types 
+•	reservations 
+•	payments 
+•	invoices 
+•	restaurant_orders 
+•	menu_items 
+•	galleries 
+•	blog_posts 
+•	contact_messages 
+•	notifications 
+•	audit_logs 
+10.39 Component Relationships
+The software components interact in the following sequence:
+1.	User accesses the web application. 
+2.	The Presentation Layer receives user requests. 
+3.	Requests are forwarded to the appropriate Business Logic module. 
+4.	Business Logic validates inputs and applies business rules. 
+5.	Data Access Layer retrieves or updates information in the MySQL database. 
+6.	Results are returned to the Business Logic Layer. 
+7.	The Presentation Layer displays the response to the user. 
+This layered communication improves maintainability and minimizes coupling between software modules.
+10.40 Deployment Diagram
+Introduction
+The Deployment Diagram illustrates the physical architecture of the GK My Halaba Hotel Management Information System. It identifies the hardware devices, servers, network connections, and external services required for deployment.
+Initially, the system will operate as a web-based application and can later be expanded into mobile platforms.
+Deployment Nodes
+Client Devices
+Supported client devices include:
+•	Desktop Computer 
+•	Laptop 
+•	Tablet 
+•	Smartphone 
+Supported browsers include:
+•	Google Chrome 
+•	Microsoft Edge 
+•	Mozilla Firefox 
+•	Safari 
+Web Server
+Responsibilities include:
+•	Hosting the Laravel application 
+•	Processing HTTP requests 
+•	Managing authentication 
+•	Executing business logic 
+•	Serving website resources 
+Recommended technologies:
+•	Apache HTTP Server or Nginx 
+•	PHP 8.2 or later 
+•	Laravel Framework 
+Database Server
+Responsibilities include:
+•	Store operational data 
+•	Execute SQL queries 
+•	Manage transactions 
+•	Maintain data integrity 
+•	Perform scheduled backups 
+Database Management System:
+•	MySQL 
+External Services
+The system is designed to integrate with the following services:
+•	Telebirr Payment Gateway 
+•	Commercial Bank of Ethiopia (CBE) 
+•	Awash Bank 
+•	WhatsApp Messaging 
+•	SMTP Email Service 
+These integrations are optional during the initial deployment and can be enabled as the hotel expands its digital services.
+10.41 Package Diagram
+Introduction
+The Package Diagram organizes the application into logical modules, improving software organization and maintainability.
+Each package groups related classes and components that perform a common business function.
+Authentication Package
+Contains:
+•	Login 
+•	Logout 
+•	Password Management 
+•	User Authentication 
+•	Authorization 
+Reservation Package
+Contains:
+•	Reservation 
+•	Room Availability 
+•	Booking 
+•	Cancellation 
+•	Reservation History 
+Guest Package
+Contains:
+•	Guest Registration 
+•	Guest Profile 
+•	Guest History 
+Room Package
+Contains:
+•	Room 
+•	Room Type 
+•	Room Status 
+•	Room Assignment 
+Payment Package
+Contains:
+•	Payment 
+•	Invoice 
+•	Transactions 
+•	Payment History 
+Restaurant Package
+Contains:
+•	Menu Management 
+•	Restaurant Orders 
+•	Billing 
+Website Package
+Contains:
+•	Homepage 
+•	About 
+•	Services 
+•	Rooms 
+•	Restaurant 
+•	Gallery 
+•	Blog 
+•	Contact 
+•	Booking Form 
+Administration Package
+Contains:
+•	User Management 
+•	Staff Management 
+•	Reports 
+•	Dashboard 
+•	Audit Logs 
+•	Backup 
+•	Settings 
+10.42 State Machine Diagram
+Introduction
+The State Machine Diagram illustrates how an object changes its state throughout its lifecycle.
+Within the GK My Halaba Hotel Management Information System, the Reservation entity is selected because it passes through several well-defined operational states.
+Reservation Lifecycle States
+The reservation object transitions through the following states:
+•	New 
+•	Pending Confirmation 
+•	Confirmed 
+•	Checked In 
+•	Checked Out 
+•	Cancelled 
+•	Closed 
+State Transitions
+New → Pending Confirmation
+Event:
+Guest submits an online reservation request.
+Pending Confirmation → Confirmed
+Event:
+Receptionist verifies availability and confirms the reservation.
+Pending Confirmation → Cancelled
+Event:
+Guest cancels the reservation before confirmation or the reservation expires.
+Confirmed → Checked In
+Event:
+Guest arrives at the hotel and completes the check-in process.
+Confirmed → Cancelled
+Event:
+Reservation is cancelled by the guest or an authorized staff member before check-in.
+Checked In → Checked Out
+Event:
+Guest completes payment, returns the room key, and the receptionist finalizes the checkout process.
+Checked Out → Closed
+Event:
+Reservation is archived after checkout, invoice generation, and payment completion.
+Benefits of the State Machine Diagram
+The Reservation State Machine Diagram provides the following benefits:
+•	Visualizes the reservation lifecycle. 
+•	Prevents invalid state transitions. 
+•	Supports workflow validation. 
+•	Simplifies software implementation. 
+•	Improves testing and debugging. 
+10.43 UML Traceability Matrix
+The UML diagrams developed in this chapter are directly linked to the requirements defined in earlier chapters.
+UML Diagram	Related Chapters
+Use Case Diagram	Chapters 5, 7, 8, and 9
+Activity Diagram	Chapters 5, 8, and 9
+Sequence Diagram	Chapters 5 and 9
+Class Diagram	Chapters 5, 6, and 7
+Entity Relationship Diagram	Chapters 5 and 6
+Component Diagram	Chapters 4 and 6
+Package Diagram	Chapter 4
+Deployment Diagram	Chapters 4 and 6
+State Machine Diagram	Chapter 9
+This traceability ensures consistency between requirements, analysis, design, and implementation.
+10.44 Design Principles Applied
+The design of the GK My Halaba Hotel Management Information System follows internationally accepted software engineering principles.
+Separation of Concerns
+Business logic, presentation, and data access are separated into independent layers.
+Modularity
+The system is divided into reusable functional modules such as Reservation Management, Payment Management, Restaurant Management, Website Management, and Reporting.
+Scalability
+The architecture supports future enhancements including:
+•	Mobile applications 
+•	Online payment gateways 
+•	SMS notifications 
+•	Multi-branch hotel management 
+•	Integration with Online Travel Agencies (OTAs) 
+Security
+Security measures include:
+•	Role-Based Access Control (RBAC) 
+•	Password encryption 
+•	Secure authentication 
+•	Input validation 
+•	Audit logging 
+•	Database protection 
+Maintainability
+The layered architecture, modular packages, and standardized coding practices facilitate maintenance, testing, and future system enhancements.
+10.45 Benefits of the UML Models
+The UML models developed for the GK My Halaba Hotel Management Information System provide several advantages:
+•	Improve communication between developers and stakeholders. 
+•	Reduce ambiguity in system requirements. 
+•	Support object-oriented software development. 
+•	Simplify database design. 
+•	Facilitate software testing. 
+•	Improve maintainability. 
+•	Serve as comprehensive technical documentation. 
+•	Support future expansion and integration. 
+10.46 Chapter Summary
+This chapter presented the complete UML system models for the GK My Halaba Hotel Management Information System. It introduced behavioral, structural, and architectural views through the Use Case, Activity, Sequence, Class, Entity Relationship, Component, Deployment, Package, and State Machine diagrams.
+Together, these models provide a comprehensive blueprint for implementing the system using Laravel, MySQL, Bootstrap, and modern web technologies. They ensure consistency between requirements and implementation while supporting maintainability, scalability, and future enhancements.
+10.47 Chapter Conclusion
+The UML models documented in this chapter transform the functional and non-functional requirements into a structured software design. They define user interactions, software components, database structure, and deployment architecture.
+These models establish a strong foundation for the implementation phase and reduce development risks by providing clear technical guidance. They also ensure that the final system meets the operational needs of GK My Halaba Hotel while remaining adaptable to future business growth and technological advancements.
+
 
 
 
