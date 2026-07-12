@@ -1608,3 +1608,227 @@ This traceability ensures that every quality requirement can be validated during
 6.18 Chapter Summary
 This chapter defined 44 non-functional requirements (NFR-001 to NFR-044) for the GK My Halaba Hotel Management Information System. These requirements specify the quality standards that the system must satisfy, including performance, security, availability, reliability, usability, maintainability, scalability, compatibility, portability, accessibility, backup and recovery, legal compliance, and testing. Together with the functional requirements defined in Chapter 5, they provide a comprehensive specification that will guide the design, implementation, verification, deployment, and long-term maintenance of the system.
 
+CHAPTER 7
+USER ROLES AND PERMISSIONS
+7.1 Introduction
+The GK My Halaba Hotel Management Information System (HMIS) supports multiple categories of users, each with different responsibilities and levels of system access. To ensure confidentiality, integrity, and security, the system implements Role-Based Access Control (RBAC).
+RBAC assigns permissions based on predefined user roles rather than individual users. Each authenticated user is granted access only to the functions required to perform their responsibilities. This minimizes unauthorized access, protects sensitive information, and simplifies user management.
+The primary user roles in the system are:
+•	Owner 
+•	Administrator 
+•	Manager 
+•	Receptionist 
+•	Accountant 
+•	Guest 
+7.2 Role-Based Access Control (RBAC)
+Role-Based Access Control ensures that:
+•	Every user has one assigned role. 
+•	Permissions are granted based on role. 
+•	Unauthorized actions are prevented. 
+•	Sensitive data is protected. 
+•	Administrative functions are restricted to authorized personnel. 
+Benefits of RBAC
+•	Improved Security 
+•	Simplified Administration 
+•	Better Accountability 
+•	Easier Maintenance 
+•	Regulatory Compliance 
+•	Reduced Risk of Unauthorized Access 
+7.3 User Roles Overview
+Role	Description
+Owner	Full access to all modules and system settings
+Administrator	Manages users, system configuration, and website content
+Manager	Supervises hotel operations and reviews reports
+Receptionist	Manages reservations, guest check-in, and check-out
+Accountant	Manages payments and financial reports
+Guest	Views hotel information and makes reservations
+
+7.4 Owner Role
+Description
+The Owner is the highest-level user with unrestricted access to the entire system.
+Responsibilities
+•	Monitor hotel operations 
+•	Review financial performance 
+•	Manage business settings 
+•	Access all reports 
+•	Approve strategic changes 
+•	Monitor staff activities 
+Permissions
+•	View Dashboard 
+•	Manage Users 
+•	Manage Rooms 
+•	Manage Reservations 
+•	Manage Guests 
+•	Manage Payments 
+•	Manage Restaurant 
+•	Manage Reports 
+•	Manage Website 
+•	View Audit Logs 
+•	Backup Database 
+•	Restore Database 
+•	Manage System Settings 
+Access Level
+Full Access
+7.5 Administrator Role
+Description
+The Administrator manages the technical and operational aspects of the system.
+Responsibilities
+•	Create user accounts 
+•	Assign roles 
+•	Configure system settings 
+•	Update website content 
+•	Manage room information 
+•	Maintain the gallery 
+•	Publish blog posts 
+Permissions
+•	Dashboard 
+•	User Management 
+•	Room Management 
+•	Reservation Management 
+•	Gallery Management 
+•	Blog Management 
+•	Website Settings 
+•	Reports 
+•	Backup Database 
+Restrictions
+Cannot modify Owner account permissions.
+Access Level
+Administrative Access
+7.6 Manager Role
+Description
+The Manager supervises daily hotel operations.
+Responsibilities
+•	Monitor reservations 
+•	Supervise staff 
+•	Review occupancy 
+•	Generate reports 
+•	Review revenue 
+•	Resolve operational issues 
+Permissions
+•	Dashboard 
+•	Reservation Management 
+•	Guest Management 
+•	Room Status 
+•	Reports 
+•	Restaurant Reports 
+•	Financial Summary 
+Restrictions
+Cannot manage user accounts or system configuration.
+Access Level
+Operational Management
+7.7 Receptionist Role
+Description
+Receptionists interact directly with guests and manage front-desk operations.
+Responsibilities
+•	Register guests 
+•	Manage reservations 
+•	Check guests in 
+•	Check guests out 
+•	Update guest information 
+•	Assign rooms 
+Permissions
+•	Dashboard 
+•	Guest Registration 
+•	Reservation Management 
+•	Room Assignment 
+•	Check-in 
+•	Check-out 
+•	Payment Recording 
+•	Invoice Printing 
+Restrictions
+Cannot access system settings, user management, or financial reports.
+Access Level
+Front Office Operations
+7.8 Accountant Role
+Description
+The Accountant manages the financial operations of the hotel.
+Responsibilities
+•	Record payments 
+•	Verify transactions 
+•	Generate invoices 
+•	Produce financial reports 
+•	Monitor revenue 
+Permissions
+•	Dashboard 
+•	Payment Management 
+•	Invoice Management 
+•	Revenue Reports 
+•	Financial Reports 
+Restrictions
+Cannot modify reservations, rooms, or website content.
+Access Level
+Financial Operations
+7.9 Guest Role
+Description
+Guests access the public-facing website to obtain hotel information and request services.
+Responsibilities
+•	Browse hotel information 
+•	View rooms 
+•	Make reservations 
+•	Submit contact forms 
+•	View restaurant menu 
+•	Read blog posts 
+Permissions
+•	View Home Page 
+•	View About Page 
+•	View Rooms 
+•	View Gallery 
+•	View Restaurant Menu 
+•	Make Reservation 
+•	Submit Contact Form 
+Restrictions
+Guests cannot access the administration dashboard or internal management features.
+Access Level
+Public Access
+________________________________________
+7.10 Permission Matrix
+System Module	Owner	Admin	Manager	Receptionist	Accountant	Guest
+Dashboard	✓	✓	✓	✓	✓	✗
+User Management	✓	✓	✗	✗	✗	✗
+Room Management	✓	✓	✓	✓	✗	✗
+Reservation Management	✓	✓	✓	✓	✗	✓ (Own Reservation)
+Guest Management	✓	✓	✓	✓	✗	✗
+Check-in / Check-out	✓	✓	✓	✓	✗	✗
+Payment Management	✓	✓	✗	✓	✓	✗
+Restaurant Management	✓	✓	✓	✗	✗	✗
+Reports	✓	✓	✓	✗	✓	✗
+Website Content	✓	✓	✗	✗	✗	✗
+System Settings	✓	✓	✗	✗	✗	✗
+Database Backup	✓	✓	✗	✗	✗	✗
+
+7.11 Role Inheritance
+The system follows a hierarchical access model:
+Owner
+   │
+Administrator
+   │
+Manager
+   │
+Receptionist
+   │
+Accountant
+   │
+Guest
+Higher-level roles have broader permissions, while lower-level roles are restricted to their operational responsibilities.
+7.12 Security Principles
+The role management system follows these principles:
+•	Least Privilege Principle 
+•	Separation of Duties 
+•	Authentication Before Authorization 
+•	Session-Based Access Control 
+•	Activity Logging 
+•	Password Security 
+•	Secure Role Assignment 
+7.13 Traceability
+The user roles defined in this chapter are referenced by:
+•	Functional Requirements (Chapter 5) 
+•	Non-Functional Requirements (Chapter 6) 
+•	Use Cases (Chapter 9) 
+•	Database Design (User Table) 
+•	Class Diagram 
+•	Sequence Diagrams 
+•	Test Cases 
+•	Security Design 
+7.14 Chapter Summary
+This chapter defined the user roles and permissions for the GK My Halaba Hotel Management Information System. Using Role-Based Access Control (RBAC), the system assigns permissions according to organizational responsibilities, ensuring secure, efficient, and controlled access to system resources. These roles provide the foundation for implementing authentication, authorization, auditing, and secure operation throughout the system.
+
