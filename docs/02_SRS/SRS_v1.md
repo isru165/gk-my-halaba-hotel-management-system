@@ -3493,6 +3493,679 @@ Each use case is linked to the corresponding Functional Requirements and Busines
 9.46 Chapter Conclusion
 The use case specifications presented in this chapter establish the behavioral foundation of the GK My Halaba Hotel Management Information System. Together with the functional and non-functional requirements defined in previous chapters, they provide a comprehensive blueprint for developing a secure, scalable, and user-friendly hotel management solution.
 
+CHAPTER 10
+SYSTEM MODELS (UML DIAGRAMS)
+10.1 Introduction
+Unified Modeling Language (UML) is a standardized modeling language used to visualize, specify, construct, and document software systems. UML diagrams provide a graphical representation of system requirements, structure, and behavior, enabling developers, analysts, designers, and stakeholders to communicate effectively throughout the software development lifecycle.
+For the GK My Halaba Hotel Management Information System (HMIS), UML diagrams serve as a blueprint for implementation. They help translate the functional and non-functional requirements into a structured design that supports maintainability, scalability, and traceability.
+The UML models presented in this chapter are directly derived from the requirements defined in Chapters 5 through 9.
+10.2 Objectives of System Modeling
+The objectives of developing UML models for the system are to:
+•	Visualize system functionality and user interactions. 
+•	Represent the static structure of the application. 
+•	Describe dynamic system behavior. 
+•	Support database and software architecture design. 
+•	Improve communication among stakeholders. 
+•	Provide documentation for future maintenance and enhancements. 
+•	Facilitate implementation and testing. 
+10.3 UML Diagrams Included
+The following UML diagrams will be developed for the GK My Halaba Hotel Management Information System:
+Diagram	Purpose
+Use Case Diagram	Shows interactions between users and the system
+Activity Diagram	Describes business workflows
+Sequence Diagram	Shows message flow between objects
+Class Diagram	Represents system classes and relationships
+State Machine Diagram	Describes object state transitions
+Component Diagram	Shows software components
+Deployment Diagram	Shows hardware and deployment architecture
+Package Diagram	Organizes system modules
+Entity Relationship Diagram (ERD)	Represents database entities and relationships
+
+10.4 Use Case Diagram
+Purpose
+The Use Case Diagram provides a high-level overview of how different actors interact with the GK My Halaba Hotel Management Information System. It identifies the services offered by the system and the users who initiate them.
+This diagram serves as the starting point for understanding system functionality before moving to more detailed behavioral and structural diagrams.
+Primary Actors
+The system includes the following actors:
+•	Guest 
+•	Receptionist 
+•	Manager 
+•	Administrator 
+•	Owner 
+•	Accountant 
+Major Use Cases
+The Use Case Diagram includes the major functional areas of the system, including:
+Authentication
+•	Login 
+•	Logout 
+•	Change Password 
+•	Reset Password 
+Reservation Management
+•	Search Room Availability 
+•	Create Reservation 
+•	Update Reservation 
+•	Cancel Reservation 
+•	View Reservation 
+Room Management
+•	Add Room 
+•	Update Room 
+•	Delete Room 
+•	Assign Room 
+•	View Room Status 
+Guest Management
+•	Register Guest 
+•	Update Guest Information 
+•	Search Guest 
+•	View Guest History 
+Check-in / Check-out
+•	Check-in Guest 
+•	Check-out Guest 
+Payment Management
+•	Record Payment 
+•	Generate Invoice 
+•	View Payment History 
+Restaurant Management
+•	Manage Orders 
+•	Manage Menu 
+Website Management
+•	Manage Website Content 
+•	Manage Gallery 
+•	Publish Blog 
+•	Manage Contact Messages 
+Reporting
+•	Generate Reports 
+•	Dashboard Analytics 
+•	Occupancy Statistics 
+Administration
+•	Manage Users 
+•	Manage Roles 
+•	Backup Database 
+•	Restore Database 
+•	View Audit Logs 
+•	Configure System Settings 
+10.5 Relationships
+The Use Case Diagram includes the following UML relationships:
+Association
+Represents communication between actors and use cases.
+Example:
+Receptionist → Check-in Guest
+Include Relationship
+Used when one use case always invokes another.
+Examples:
+•	Check-out Guest <<include>> Generate Invoice 
+•	Record Payment <<include>> Generate Receipt 
+•	Create Reservation <<include>> Check Room Availability 
+
+Extend Relationship
+Represents optional or conditional behavior.
+Examples:
+•	Apply Discount <<extend>> Record Payment 
+•	Cancel Reservation <<extend>> Create Reservation 
+Generalization
+Represents inheritance among actors.
+Example:
+Administrator inherits the capabilities of a standard authenticated user while possessing additional administrative privileges.
+10.6 Benefits of the Use Case Diagram
+The Use Case Diagram provides several advantages:
+•	Clarifies system scope. 
+•	Identifies system users. 
+•	Improves stakeholder communication. 
+•	Serves as the basis for Activity and Sequence Diagrams. 
+•	Supports software testing. 
+•	Helps developers understand business processes. 
+10.7 Traceability
+The Use Case Diagram is directly derived from:
+•	Chapter 5 – Functional Requirements 
+•	Chapter 6 – Non-Functional Requirements 
+•	Chapter 7 – User Roles and Permissions 
+•	Chapter 8 – Business Rules 
+•	Chapter 9 – Use Case Specifications 
+This ensures complete consistency between requirements and design.
+10.8 Part 1 Summary
+This section introduced UML system modeling and described the role of the Use Case Diagram in representing the interactions between users and the GK My Halaba Hotel Management Information System. The identified actors, major use cases, UML relationships, and traceability establish the foundation for the remaining design diagrams.
+CHAPTER 10 – PART 2
+ACTIVITY DIAGRAMS AND SEQUENCE DIAGRAMS
+10.9 Activity Diagrams
+Introduction
+An Activity Diagram models the workflow of business processes and system operations. It illustrates the sequence of activities, decision points, parallel operations, and termination points required to accomplish a particular business objective.
+For the GK My Halaba Hotel Management Information System, Activity Diagrams provide a visual representation of the operational procedures performed by guests, receptionists, managers, accountants, administrators, and owners.
+The diagrams presented in this section are derived directly from the Use Case Specifications documented in Chapter 9.
+10.10 Activity Diagram – Online Room Reservation
+Purpose
+This activity diagram models the complete process of booking a room through the hotel website.
+Primary Actor
+Guest
+Preconditions
+•	Website is available. 
+•	Room information exists. 
+Workflow
+1.	Guest visits the website. 
+2.	Guest selects Book Now. 
+3.	Guest enters: 
+o	Check-in date 
+o	Check-out date 
+o	Number of guests 
+o	Room type 
+4.	System validates the information. 
+5.	System searches available rooms. 
+6.	System displays available rooms. 
+7.	Guest selects a room. 
+8.	Guest enters personal information. 
+9.	Guest reviews booking summary. 
+10.	Guest confirms reservation. 
+11.	System generates Reservation ID. 
+12.	Reservation status becomes Confirmed. 
+13.	Confirmation page is displayed. 
+Decision Points
+•	Room available? 
+•	Guest information valid? 
+•	Reservation confirmed? 
+Postconditions
+Reservation stored successfully.
+10.11 Activity Diagram – Guest Check-in
+Purpose
+Models the hotel reception check-in process.
+Primary Actor
+Receptionist
+Workflow
+1.	Guest arrives. 
+2.	Receptionist searches reservation. 
+3.	Verify guest identity. 
+4.	Verify room availability. 
+5.	Verify payment requirements. 
+6.	Assign room. 
+7.	Generate room key. 
+8.	Update room status to Occupied. 
+9.	Complete check-in. 
+Decision Points
+•	Reservation found? 
+•	Walk-in guest? 
+•	Payment completed? 
+Postconditions
+Guest successfully checked in.
+10.12 Activity Diagram – Guest Check-out
+Purpose
+Models the checkout procedure.
+Primary Actor
+Receptionist
+Workflow
+1.	Search guest. 
+2.	Review room charges. 
+3.	Review restaurant charges. 
+4.	Calculate total bill. 
+5.	Receive payment. 
+6.	Generate invoice. 
+7.	Update room status to Cleaning. 
+8.	Complete checkout. 
+Decision Points
+•	Outstanding balance? 
+•	Payment successful? 
+Postconditions
+Guest checked out successfully.
+10.13 Activity Diagram – Payment Processing
+Purpose
+Illustrates payment recording for hotel services.
+Primary Actors
+Receptionist
+Accountant
+Workflow
+1.	Open payment module. 
+2.	Search reservation. 
+3.	Display outstanding balance. 
+4.	Select payment method. 
+5.	Enter payment amount. 
+6.	Verify payment. 
+7.	Record transaction. 
+8.	Generate receipt. 
+9.	Update payment status. 
+Supported Payment Methods
+•	Cash 
+•	Telebirr 
+•	CBE 
+•	Awash Bank 
+Postconditions
+Payment recorded.
+10.14 Activity Diagram – Restaurant Order Processing
+Purpose
+Represents restaurant service workflow.
+Primary Actor
+Receptionist
+Workflow
+1.	Select guest. 
+2.	Select menu items. 
+3.	Enter quantity. 
+4.	Calculate total. 
+5.	Save order. 
+6.	Add to guest invoice or receive payment. 
+7.	Update order status. 
+8.	Complete order. 
+Postconditions
+Restaurant order completed.
+10.15 Activity Diagram – Room Management
+Purpose
+Models room administration.
+Primary Actor
+Administrator
+Workflow
+1.	Login. 
+2.	Open Room Management. 
+3.	Add/Edit/Delete room. 
+4.	Save changes. 
+5.	Validate information. 
+6.	Update database. 
+7.	Display confirmation. 
+10.16 Sequence Diagrams
+Introduction
+Sequence Diagrams illustrate how objects communicate with one another over time to accomplish a specific use case.
+Each interaction is represented chronologically using messages exchanged between actors and system components.
+10.17 Sequence Diagram – User Login
+Participants
+•	User 
+•	Login Page 
+•	Authentication Controller 
+•	Database 
+Interaction Sequence
+1.	User enters credentials. 
+2.	Login page sends credentials to Authentication Controller. 
+3.	Controller validates input. 
+4.	Database verifies user. 
+5.	Database returns user information. 
+6.	Controller creates session. 
+7.	Dashboard displayed. 
+10.18 Sequence Diagram – Reservation Creation
+Participants
+•	Guest 
+•	Reservation Page 
+•	Reservation Controller 
+•	Room Database 
+•	Reservation Database 
+Interaction Sequence
+1.	Guest submits reservation. 
+2.	Controller checks room availability. 
+3.	Database returns available rooms. 
+4.	Guest confirms booking. 
+5.	Controller stores reservation. 
+6.	Reservation ID generated. 
+7.	Confirmation displayed. 
+10.19 Sequence Diagram – Guest Check-in
+Participants
+•	Receptionist 
+•	Check-in Interface 
+•	Reservation Controller 
+•	Room Database 
+•	Guest Database 
+Interaction Sequence
+1.	Receptionist searches reservation. 
+2.	Controller retrieves reservation. 
+3.	Verify identity. 
+4.	Assign room. 
+5.	Update room status. 
+6.	Store check-in information. 
+7.	Confirmation displayed. 
+10.20 Sequence Diagram – Payment Recording
+Participants
+•	Receptionist 
+•	Payment Module 
+•	Payment Controller 
+•	Database 
+Interaction Sequence
+1.	Select reservation. 
+2.	Display outstanding balance. 
+3.	Enter payment. 
+4.	Validate transaction. 
+5.	Store payment. 
+6.	Generate receipt. 
+10.21 Sequence Diagram – Report Generation
+Participants
+•	Manager 
+•	Reporting Module 
+•	Database 
+Interaction Sequence
+1.	Select report. 
+2.	Choose date range. 
+3.	Database retrieves information. 
+4.	Report generated. 
+5.	Report displayed. 
+6.	Optional export to PDF or Excel. 
+10.22 Traceability
+The Activity and Sequence Diagrams are derived from the following use cases:
+Diagram	Related Use Cases
+Online Reservation	UC-008, UC-009
+Guest Check-in	UC-012, UC-013
+Guest Check-out	UC-014
+Payment Processing	UC-016, UC-017
+Restaurant Order	UC-018
+Room Management	UC-026
+User Login	UC-001
+Report Generation	UC-020
+
+10.23 Part 2 Summary
+This section documented the Activity Diagrams and Sequence Diagrams that model the dynamic behavior of the GK My Halaba Hotel Management Information System. These workflows describe how users interact with the system and how internal components communicate to complete key business processes. The models provide a solid foundation for implementation and software testing.
+CHAPTER 10 – PART 3
+CLASS DIAGRAM AND ENTITY RELATIONSHIP DIAGRAM (ERD)
+10.24 Class Diagram
+Introduction
+The Class Diagram represents the static structure of the GK My Halaba Hotel Management Information System (HMIS). It identifies the major classes, their attributes, operations, and the relationships between them.
+The class diagram serves as the foundation for object-oriented software development and will guide the implementation of the system using Laravel's Model-View-Controller (MVC) architecture.
+Each class represents a real-world entity involved in hotel operations.
+10.25 Objectives of the Class Diagram
+The Class Diagram aims to:
+•	Represent system entities as classes. 
+•	Define class attributes and operations. 
+•	Show relationships among classes. 
+•	Support database design. 
+•	Facilitate object-oriented implementation. 
+•	Improve software maintainability and scalability. 
+________________________________________
+10.26 Main System Classes
+The system consists of the following primary classes:
+•	User 
+•	Role 
+•	Guest 
+•	Reservation 
+•	Room 
+•	RoomType 
+•	Payment 
+•	Invoice 
+•	RestaurantOrder 
+•	MenuItem 
+•	ContactMessage 
+•	Gallery 
+•	BlogPost 
+•	Report 
+•	Notification 
+•	AuditLog 
+10.27 Class Descriptions
+Class: User
+Description
+Represents all authenticated users of the system.
+Attributes
+•	userId 
+•	fullName 
+•	username 
+•	email 
+•	phoneNumber 
+•	password 
+•	roleId 
+•	status 
+•	createdAt 
+•	updatedAt 
+Methods
+•	login() 
+•	logout() 
+•	changePassword() 
+•	updateProfile() 
+Class: Role
+Attributes
+•	roleId 
+•	roleName 
+•	description 
+Methods
+•	assignPermission() 
+•	removePermission() 
+Class: Guest
+Attributes
+•	guestId 
+•	fullName 
+•	phone 
+•	email 
+•	gender 
+•	nationality 
+•	identificationNumber 
+•	address 
+Methods
+•	register() 
+•	updateGuest() 
+•	viewHistory() 
+Class: Room
+Attributes
+•	roomId 
+•	roomNumber 
+•	roomTypeId 
+•	price 
+•	status 
+•	floor 
+•	description 
+Methods
+•	addRoom() 
+•	updateRoom() 
+•	deleteRoom() 
+•	changeStatus() 
+
+Class: RoomType
+Attributes
+•	roomTypeId 
+•	roomName 
+•	bedType 
+•	maximumGuests 
+•	description 
+Methods
+•	addRoomType() 
+•	updateRoomType() 
+Class: Reservation
+Attributes
+•	reservationId 
+•	guestId 
+•	roomId 
+•	checkInDate 
+•	checkOutDate 
+•	reservationStatus 
+•	totalAmount 
+Methods
+•	createReservation() 
+•	updateReservation() 
+•	cancelReservation() 
+Class: Payment
+Attributes
+•	paymentId 
+•	reservationId 
+•	amount 
+•	paymentMethod 
+•	paymentDate 
+•	paymentStatus 
+Methods
+•	recordPayment() 
+•	verifyPayment() 
+Class: Invoice
+Attributes
+•	invoiceId 
+•	reservationId 
+•	invoiceDate 
+•	totalAmount 
+•	invoiceStatus 
+Methods
+•	generateInvoice() 
+•	printInvoice() 
+Class: RestaurantOrder
+Attributes
+•	orderId 
+•	guestId 
+•	reservationId 
+•	orderDate 
+•	totalAmount 
+•	orderStatus 
+Methods
+•	createOrder() 
+•	updateOrder() 
+Class: MenuItem
+Attributes
+•	menuItemId 
+•	itemName 
+•	category 
+•	price 
+•	availability 
+Methods
+•	addMenuItem() 
+•	updateMenu() 
+•	deleteMenuItem()
+Class: BlogPost
+Attributes
+•	postId 
+•	title 
+•	content 
+•	image 
+•	publishDate 
+•	author 
+Methods
+•	publish() 
+•	edit() 
+•	delete() 
+Class: Gallery
+Attributes
+•	galleryId 
+•	imageTitle 
+•	imagePath 
+•	uploadDate 
+Methods
+•	uploadImage() 
+•	deleteImage() 
+Class: ContactMessage
+Attributes
+•	messageId 
+•	name 
+•	email 
+•	phone 
+•	subject 
+•	message 
+•	sentDate 
+Methods
+•	sendMessage() 
+•	reply() 
+Class: Notification
+Attributes
+•	notificationId 
+•	recipient 
+•	message 
+•	notificationType 
+•	sentDate 
+Methods
+•	send() 
+•	resend() 
+Class: Report
+Attributes
+•	reportId 
+•	reportType 
+•	generatedBy 
+•	generatedDate 
+Methods
+•	generatePDF() 
+•	exportExcel() 
+Class: AuditLog
+Attributes
+•	logId 
+•	userId 
+•	activity 
+•	activityDate 
+•	ipAddress 
+Methods
+•	recordActivity() 
+________________________________________
+10.28 Class Relationships
+The following relationships exist among the classes:
+Relationship	Description
+User → Role	Many users belong to one role
+Guest → Reservation	One guest can have many reservations
+Room → Reservation	One room can have many reservations over time
+Reservation → Payment	One reservation can have one or more payments
+Reservation → Invoice	One reservation generates one invoice
+Reservation → RestaurantOrder	One reservation can have multiple restaurant orders
+RestaurantOrder → MenuItem	One order contains multiple menu items
+User → AuditLog	One user generates many audit log records
+User → BlogPost	One administrator can publish many blog posts
+User → Gallery	One administrator can upload many images
+
+10.29 Object-Oriented Design Principles
+The system follows these principles:
+Encapsulation
+Sensitive data is accessed through controlled methods.
+Inheritance
+Specialized user roles inherit common user characteristics.
+Polymorphism
+Different user roles perform common operations with role-specific permissions.
+Abstraction
+Business logic is hidden behind service methods and interfaces.
+10.30 Entity Relationship Diagram (ERD)
+Introduction
+The Entity Relationship Diagram (ERD) represents the logical database structure of the GK My Halaba Hotel Management Information System.
+It defines database entities, attributes, primary keys, foreign keys, and relationships required to store hotel information consistently and efficiently.
+10.31 Database Entities
+The primary database entities include:
+•	Users 
+•	Roles 
+•	Guests 
+•	Rooms 
+•	RoomTypes 
+•	Reservations 
+•	Payments 
+•	Invoices 
+•	RestaurantOrders 
+•	MenuItems 
+•	BlogPosts 
+•	Gallery 
+•	ContactMessages 
+•	Notifications 
+•	AuditLogs 
+10.32 Primary Keys
+Each entity uses a unique primary key.
+Entity	Primary Key
+Users	user_id
+Roles	role_id
+Guests	guest_id
+Rooms	room_id
+RoomTypes	room_type_id
+Reservations	reservation_id
+Payments	payment_id
+Invoices	invoice_id
+RestaurantOrders	order_id
+MenuItems	menu_item_id
+BlogPosts	post_id
+Gallery	gallery_id
+ContactMessages	message_id
+Notifications	notification_id
+AuditLogs	log_id
+
+10.33 Foreign Key Relationships
+Child Table	Foreign Key	Parent Table
+Users	role_id	Roles
+Reservations	guest_id	Guests
+Reservations	room_id	Rooms
+Rooms	room_type_id	RoomTypes
+Payments	reservation_id	Reservations
+Invoices	reservation_id	Reservations
+RestaurantOrders	reservation_id	Reservations
+AuditLogs	user_id	Users
+
+10.34 Cardinality
+Relationship	Cardinality
+Role → Users	1 : N
+Guest → Reservation	1 : N
+Room → Reservation	1 : N
+Reservation → Payment	1 : N
+Reservation → Invoice	1 : 1
+Reservation → RestaurantOrder	1 : N
+User → AuditLog	1 : N
+
+10.35 Database Normalization
+The database design follows normalization principles to reduce redundancy and improve consistency.
+First Normal Form (1NF)
+•	Atomic values 
+•	No repeating groups 
+Second Normal Form (2NF)
+•	Full dependency on primary keys 
+Third Normal Form (3NF)
+•	No transitive dependencies 
+10.36 Traceability
+The Class Diagram and ERD are derived from:
+•	Chapter 5 – Functional Requirements 
+•	Chapter 7 – User Roles 
+•	Chapter 8 – Business Rules 
+•	Chapter 9 – Use Cases 
+These models provide the structural blueprint for database implementation and software development.
+10.37 Part 3 Summary
+This section defined the static structure of the GK My Halaba Hotel Management Information System through the Class Diagram and Entity Relationship Diagram (ERD). It identified the core classes, their attributes and methods, object-oriented relationships, database entities, keys, and normalization principles. These models provide a solid foundation for implementing the application's business logic and database schema.
+
+
+
 CHAPTER 10 – PART 4
 COMPONENT, DEPLOYMENT, PACKAGE, AND STATE MACHINE DIAGRAMS
 10.38 Component Diagram
