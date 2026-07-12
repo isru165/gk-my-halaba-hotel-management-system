@@ -680,4 +680,116 @@ To ensure consistency throughout the Software Development Life Cycle (SDLC), eve
 This traceability approach enables complete tracking of each requirement from analysis through implementation, testing, deployment, and maintenance.
 4.13 Chapter Summary
 This chapter presented the overall architecture of the GK My Halaba Hotel Management Information System. It described the architectural style, software layers, major system modules, technology stack, communication flow, deployment model, security architecture, and scalability considerations. These architectural decisions provide a strong foundation for implementing the functional and non-functional requirements described in the following chapters.
+CHAPTER 5 — FUNCTIONAL REQUIREMENTS
+5.1 Introduction
+This chapter defines the functional requirements of the GK My Halaba Hotel Management System. Functional requirements describe the services, behaviors, and operations that the system shall perform to satisfy the needs of hotel guests, management, receptionists, administrators, accountants, and system owners.
+Each functional requirement is assigned a unique identifier (FR-XXX) to ensure complete traceability throughout the software development lifecycle.
+5.2 Functional Requirement Categories
+The system shall provide the following functional modules:
+•	Authentication and User Management 
+•	Guest Management 
+•	Room Management 
+•	Reservation Management 
+•	Check-in Management 
+•	Check-out Management 
+•	Restaurant Management 
+•	Payment Management 
+•	Invoice Management 
+•	Staff Management 
+•	Website Content Management 
+•	Gallery Management 
+•	Booking Management 
+•	Reporting and Analytics 
+•	Notification System 
+•	Administration Dashboard 
+•	Website Management 
+5.3 Authentication Module
+FR-001 User Login
+Description
+The system shall allow authorized users to log into the system using their username and password.
+Priority
+High
+Actors
+•	Administrator 
+•	Owner 
+•	Manager 
+•	Receptionist 
+•	Accountant 
+Input
+•	Username 
+•	Password 
+Output
+•	Dashboard 
+•	Login Error Message 
+Acceptance Criteria
+•	Username is validated. 
+•	Password is encrypted. 
+•	Invalid credentials are rejected. 
+•	User session begins successfully. 
+FR-002 User Logout
+The system shall allow users to securely log out of the system.
+Priority: High
+FR-003 Password Reset
+The system shall allow administrators to reset user passwords.
+Priority: High
+
+FR-004 Change Password
+Users shall be able to change their own passwords.
+Priority: High
+FR-005 User Profile
+Users shall be able to update their profile information.
+Priority: Medium
+5.4 User Management Module
+FR-006 Create User
+Administrator can create new staff accounts.
+Priority: High
+FR-007 Edit User
+Administrator can modify user information.
+Priority: High
+FR-008 Delete User
+Administrator can remove user accounts.
+Priority: High
+FR-009 Assign Roles
+Administrator shall assign system roles.
+Examples:
+•	Owner 
+•	Administrator 
+•	Manager 
+•	Receptionist 
+•	Accountant 
+Priority: High
+FR-010 View User List
+Administrator can view all registered users.
+Priority: Medium
+5.5 Guest Management Module
+FR-011 Register Guest
+Receptionists shall register new guests.
+Stored information includes:
+•	Guest ID 
+•	Full Name 
+•	Gender 
+•	Nationality 
+•	Phone Number 
+•	Email 
+•	Address 
+•	Identification Number 
+Priority: High
+FR-012 Edit Guest Information
+Receptionists may update guest records.
+Priority: High
+FR-013 Delete Guest Record
+Only administrators may delete guest information.
+Priority: High
+FR-014 Search Guest
+Search by:
+•	Guest ID 
+•	Name 
+•	Phone Number 
+•	Email 
+Priority: High
+FR-015 Guest History
+System shall display previous reservations and stays.
+Priority: Medium
+End of Part 1
+
 
