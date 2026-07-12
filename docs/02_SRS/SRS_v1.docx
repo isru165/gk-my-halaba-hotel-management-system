@@ -1832,3 +1832,218 @@ The user roles defined in this chapter are referenced by:
 7.14 Chapter Summary
 This chapter defined the user roles and permissions for the GK My Halaba Hotel Management Information System. Using Role-Based Access Control (RBAC), the system assigns permissions according to organizational responsibilities, ensuring secure, efficient, and controlled access to system resources. These roles provide the foundation for implementing authentication, authorization, auditing, and secure operation throughout the system.
 
+CHAPTER 8
+BUSINESS RULES
+8.1 Introduction
+Business Rules define the policies, constraints, and operational procedures that govern the GK My Halaba Hotel Management Information System (HMIS). They ensure that hotel operations are performed consistently, accurately, and in accordance with management policies.
+These rules guide system behavior during reservation processing, guest registration, room allocation, payments, restaurant services, reporting, and administrative activities.
+Each business rule is assigned a unique identifier (BR-XXX) for traceability throughout the Software Development Life Cycle (SDLC).
+8.2 Reservation Business Rules
+BR-001 – Reservation Required Information
+Description
+Every reservation shall include the following mandatory information:
+•	Guest Full Name 
+•	Phone Number 
+•	Check-in Date 
+•	Check-out Date 
+•	Room Type 
+•	Number of Guests 
+Reason
+Incomplete reservations cannot be processed.
+BR-002 – Room Availability
+A reservation can only be confirmed if the selected room is available for the requested dates.
+
+BR-003 – Reservation Number
+Every successful reservation shall receive a unique Reservation ID generated automatically by the system.
+Example:
+RES-2026-000145
+
+BR-004 – Duplicate Reservation Prevention
+The system shall prevent duplicate reservations for the same room during overlapping dates.
+BR-005 – Reservation Status
+Every reservation shall have one of the following statuses:
+•	Pending 
+•	Confirmed 
+•	Checked-in 
+•	Checked-out 
+•	Cancelled 
+8.3 Guest Management Business Rules
+BR-006 – Guest Registration
+Every guest staying at the hotel must have a guest profile before check-in.
+BR-007 – Guest Identification
+Receptionists shall verify a valid government-issued identification document before completing check-in.
+Examples:
+•	National ID 
+•	Passport 
+•	Driver's License 
+
+BR-008 – Guest History
+The system shall preserve guest history even after previous reservations are completed.
+
+BR-009 – Maximum Occupancy
+The number of guests assigned to a room shall not exceed the room's maximum occupancy.
+Example:
+•	Standard Room (1.2 m bed): Up to 1 adult (or 2 if a couple) 
+•	Standard Room (1.5 m bed): Up to 1 adult (or 2 if a couple) 
+•	Family Room: Up to 5 guests 
+
+8.4 Room Management Business Rules
+BR-010 – Unique Room Number
+Every room number shall be unique.
+Example:
+Room 07
+Room 08
+Room 09
+...
+Room 22
+
+BR-011 – Room Status
+Every room shall always have one active status:
+•	Available 
+•	Reserved 
+•	Occupied 
+•	Cleaning 
+•	Maintenance 
+
+BR-012 – Room Price
+Only authorized users may modify room pricing.
+BR-013 – Maintenance Rooms
+Rooms marked as Maintenance shall not be available for reservations or check-ins.
+BR-014 – Cleaning Process
+After guest check-out:
+Occupied
+
+↓
+
+Cleaning
+
+↓
+
+Available
+Housekeeping must confirm cleaning before the room becomes available.
+8.5 Check-in and Check-out Business Rules
+BR-015 – Check-in Eligibility
+Guests may check in only if:
+•	A reservation exists, or 
+•	A suitable room is available for walk-in registration. 
+BR-016 – Payment Before Check-in
+Hotel management may require partial or full payment before check-in.
+
+BR-017 – Check-out Process
+Before check-out, the system shall verify:
+•	Room Charges 
+•	Restaurant Charges 
+•	Additional Services 
+•	Outstanding Balance 
+BR-018 – Invoice Generation
+A final invoice shall be generated automatically during check-out.
+8.6 Payment Business Rules
+BR-019 – Accepted Payment Methods
+The hotel accepts:
+•	Cash 
+•	Telebirr 
+•	Commercial Bank of Ethiopia (CBE) 
+•	Awash Bank 
+BR-020 – Payment Recording
+Every payment transaction shall be permanently recorded.
+Recorded information includes:
+•	Payment ID 
+•	Guest 
+•	Reservation 
+•	Amount 
+•	Date 
+•	Payment Method 
+BR-021 – Payment Verification
+Online payments must be verified before reservation confirmation.
+BR-022 – Refund Policy
+Refunds shall only be processed by authorized personnel according to hotel policy.
+8.7 Restaurant Business Rules
+BR-023 – Menu Management
+Only authorized administrators may update restaurant menus and prices.
+BR-024 – Restaurant Billing
+Restaurant purchases may be:
+•	Paid immediately 
+•	Added to the guest's hotel invoice 
+BR-025 – Order Status
+Each restaurant order shall have one status:
+•	Pending 
+•	Preparing 
+•	Ready 
+•	Served 
+•	Cancelled 
+8.8 Website Business Rules
+BR-026 – Public Information
+The website shall always display current information about:
+•	Rooms 
+•	Prices 
+•	Services 
+•	Contact Information 
+•	Gallery 
+BR-027 – Online Reservation
+Guests may submit reservations through the website at any time.
+BR-028 – Gallery Management
+Only administrators may upload, modify, or delete gallery images.
+BR-029 – Blog Publishing
+Only authorized users may publish or edit blog posts.
+8.9 User Management Business Rules
+BR-030 – Unique Username
+Each system user shall have a unique username.
+BR-031 – Password Policy
+Passwords shall:
+•	Contain at least 8 characters 
+•	Include uppercase and lowercase letters 
+•	Include at least one number 
+•	Include at least one special character 
+BR-032 – User Roles
+Every user account shall be assigned exactly one role.
+Supported roles:
+•	Owner 
+•	Administrator 
+•	Manager 
+•	Receptionist 
+•	Accountant 
+BR-033 – Account Deactivation
+Administrators may deactivate user accounts instead of deleting them.
+8.10 Reporting Business Rules
+BR-034 – Daily Reports
+The system shall generate daily operational reports.
+BR-035 – Financial Reports
+Financial reports shall include:
+•	Revenue 
+•	Payments 
+•	Outstanding Balances 
+•	Restaurant Sales 
+BR-036 – Audit Logs
+Important system activities shall be recorded for auditing purposes.
+Examples:
+•	Login 
+•	Reservation Creation 
+•	Payment Recording 
+•	User Updates 
+•	Room Changes 
+
+8.11 General Business Rules
+BR-037 – System Time
+All transactions shall use the server's official date and time.
+BR-038 – Data Integrity
+The system shall prevent inconsistent or invalid data.
+BR-039 – Backup
+Database backups shall be performed regularly according to the backup policy.
+BR-040 – Compliance
+The system shall comply with applicable Ethiopian laws and hotel operational policies.
+8.12 Business Rule Traceability
+Business Rule Category	Rule IDs
+Reservation	BR-001 – BR-005
+Guest Management	BR-006 – BR-009
+Room Management	BR-010 – BR-014
+Check-in / Check-out	BR-015 – BR-018
+Payment	BR-019 – BR-022
+Restaurant	BR-023 – BR-025
+Website	BR-026 – BR-029
+User Management	BR-030 – BR-033
+Reporting	BR-034 – BR-036
+General Rules	BR-037 – BR-040
+
+8.13 Chapter Summary
+This chapter defined 40 business rules (BR-001 to BR-040) that govern the operation of the GK My Halaba Hotel Management Information System. These rules establish the hotel's operational policies for reservations, guest management, room allocation, payments, restaurant services, website content, user management, reporting, and system administration. They provide the foundation for implementing business logic, database constraints, use cases, and validation rules throughout the application.
+
