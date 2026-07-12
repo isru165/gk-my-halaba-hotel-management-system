@@ -344,94 +344,138 @@ The system is designed to support future enhancements, including:
 •	Inventory management
 •	Employee payroll system
 •	Integration with third-party booking platforms
-CHAPTER 4 – SYSTEM ARCHITECTURE
+CHAPTER 4
+SYSTEM ARCHITECTURE
+Document: Software Requirements Specification (SRS)
+Project: GK My Halaba Hotel Management Information System
+Version: 1.0
 4.1 Introduction
-The GK My Halaba Hotel Management Information System (HMIS) is designed using a modern three-tier architecture to ensure scalability, maintainability, security, and high performance. The system separates the presentation layer, business logic layer, and data layer, allowing each component to operate independently while communicating seamlessly.
-This architecture simplifies future maintenance, supports system expansion, and enables efficient management of hotel operations.
-4.2 Architectural Overview
-The system consists of three primary layers:
-1. Presentation Layer
-This layer provides the user interface for guests and hotel staff.
-It includes:
-•	Public hotel website 
-•	Online reservation pages 
-•	Administrator Dashboard 
+The System Architecture defines the overall structure and organization of the GK My Halaba Hotel Management Information System (HMIS). It describes how different software components interact with each other to provide secure, reliable, scalable, and efficient hotel management services.
+The architecture is designed according to modern software engineering principles by separating the application into independent layers. This layered approach improves maintainability, simplifies future expansion, enhances security, and allows multiple developers to work on different modules simultaneously.
+The architecture supports both the public-facing hotel website and the internal hotel management system used by staff and administrators.
+4.2 Architectural Goals
+The architecture is designed to achieve the following objectives:
+•	High Performance 
+•	Scalability 
+•	Reliability 
+•	Security 
+•	Maintainability 
+•	Extensibility 
+•	Cross-platform compatibility 
+•	Responsive design 
+•	Centralized data management 
+•	Easy future upgrades 
+
+4.3 Architectural Style
+The GK My Halaba Hotel Management System follows a Three-Tier Architecture consisting of:
+Presentation Layer
+This layer provides the graphical user interface (GUI) that allows users to interact with the system.
+Users include:
+•	Guests 
+•	Receptionists 
+•	Administrators 
+•	Managers 
+•	Owners 
+Interfaces include:
+•	Public Website 
+•	Online Reservation Portal 
 •	Reception Dashboard 
+•	Admin Dashboard 
 •	Manager Dashboard 
 •	Owner Dashboard 
-Users interact with the system through modern web browsers on desktop computers, tablets, and mobile devices.
-2. Business Logic Layer
-This layer contains all application logic and controls system operations.
-Major modules include:
-•	Authentication Module 
-•	Reservation Module 
-•	Room Management Module 
-•	Guest Management Module 
-•	Restaurant Management Module 
-•	Payment Management Module 
-•	Gallery Management Module 
-•	Blog Management Module 
-•	Report Generation Module 
-•	User Management Module 
-•	Notification Module 
-The business layer validates user input, processes requests, and communicates with the database.
-3. Data Layer
-This layer manages all persistent information stored within the hotel system.
-It includes databases for:
+Technologies
+•	HTML5 
+•	CSS3 
+•	Bootstrap 5 
+•	JavaScript 
+Business Logic Layer
+The business layer contains all system rules and application logic.
+Responsibilities include:
+•	User Authentication 
+•	Reservation Processing 
+•	Room Availability Checking 
+•	Payment Validation 
+•	Guest Management 
+•	Report Generation 
+•	Notification Management 
+•	Booking Approval 
+•	Staff Management 
+•	Website Content Management 
+Technologies
+•	PHP 8 
+Data Layer
+The Data Layer stores all hotel information.
+The system database contains information related to:
 •	Users 
+•	Staff 
 •	Guests 
 •	Reservations 
 •	Rooms 
 •	Room Types 
 •	Payments 
 •	Restaurant Menu 
-•	Blog Posts 
 •	Gallery 
 •	Testimonials 
 •	Contact Messages 
+•	Blog Posts 
 •	Website Settings 
 •	Audit Logs 
-MySQL serves as the primary relational database management system.
-4.3 System Architecture Diagram
+Technology
+•	MySQL Database Server 
 
 
 
-                    GK MY HALABA HOTEL
-                 HOTEL MANAGEMENT SYSTEM
 
-                 ┌──────────────────────┐
-                 │      Web Browser     │
-                 │  Desktop / Mobile    │
-                 └──────────┬───────────┘
-                            │
-                     HTTPS Request
-                            │
-                 ┌──────────▼───────────┐
-                 │     Web Server       │
-                 │   Apache + PHP 8     │
-                 └──────────┬───────────┘
-                            │
-                ┌───────────▼────────────┐
-                │ Business Logic Layer   │
-                │ Authentication         │
-                │ Reservation            │
-                │ Guest Management       │
-                │ Room Management        │
-                │ Payment Management     │
-                │ Reports                │
-                └───────────┬────────────┘
-                            │
-                    SQL Queries
-                            │
-                 ┌──────────▼───────────┐
-                 │    MySQL Database    │
-                 └──────────────────────┘
 
-4.4 System Modules
-The application is divided into independent functional modules.
-Public Website
-•	Home 
-•	About 
+
+
+4.4 High-Level Architecture
+                        GK MY HALABA HOTEL
+                  HOTEL MANAGEMENT INFORMATION SYSTEM
+
+
+        Guest
+        Receptionist
+        Manager
+        Administrator
+        Owner
+               │
+               │
+       Web Browser (Desktop/Mobile)
+               │
+──────────── HTTPS ─────────────────────────
+               │
+        Apache Web Server
+               │
+        PHP Application
+               │
+────────────────────────────────────────────
+        Business Logic Layer
+
+ • Authentication Module
+ • Reservation Module
+ • Guest Module
+ • Room Module
+ • Payment Module
+ • Restaurant Module
+ • Gallery Module
+ • Blog Module
+ • Report Module
+ • Notification Module
+
+────────────────────────────────────────────
+               │
+               │ SQL
+               │
+        MySQL Database
+
+4.5 Major Software Components
+The system is divided into several independent modules.
+Public Website Module
+Responsible for presenting hotel information to visitors.
+Functions
+•	Home Page 
+•	About Hotel 
 •	Rooms 
 •	Restaurant 
 •	Gallery 
@@ -439,54 +483,80 @@ Public Website
 •	Contact 
 •	Reservation 
 •	Testimonials 
-•	FAQ 
-
-Administration
-•	Dashboard 
-•	User Management 
-•	Staff Management 
-•	Website Settings 
-Hotel Operations
-•	Room Management 
-•	Guest Management 
-•	Reservation Management 
-•	Payment Management 
+•	FAQs 
+Authentication Module
+Responsible for:
+•	Login 
+•	Logout 
+•	Password Encryption 
+•	Session Management 
+•	Password Reset 
+•	User Verification 
+Reservation Module
+Responsible for:
+•	Online Reservation 
+•	Reservation Approval 
+•	Reservation Cancellation 
+•	Reservation Status 
+•	Booking History 
+•	Room Availability 
+Guest Management Module
+Responsible for:
+•	Guest Registration 
+•	Guest Profile 
+•	Guest History 
 •	Check-in 
 •	Check-out 
-Restaurant
-•	Menu Management 
-•	Food Categories 
+Room Management Module
+Responsible for:
+•	Room Types 
+•	Room Availability 
+•	Room Pricing 
+•	Room Maintenance Status 
+•	Room Images 
+Payment Module
+Responsible for:
+•	Payment Recording 
+•	Telebirr Payments 
+•	CBE Payments 
+•	Awash Bank Payments 
+•	Payment Status 
+•	Invoice Generation 
+Restaurant Module
+Responsible for:
+•	Menu Categories 
+•	Food Management 
 •	Beverage Management 
-Content Management
-•	Gallery 
-•	Blog 
-•	Announcements 
-•	Testimonials 
-Reporting
-•	Occupancy Reports 
+•	Traditional Food 
+•	Coffee Menu 
+Gallery Module
+Responsible for:
+•	Photo Upload 
+•	Video Upload 
+•	Image Categories 
+•	Gallery Display 
+Blog Module
+Responsible for:
+•	Blog Posts 
+•	News 
+•	Promotions 
+•	Events 
+Report Module
+Responsible for generating
+•	Daily Reports 
+•	Monthly Reports 
 •	Revenue Reports 
 •	Reservation Reports 
 •	Guest Reports 
-4.5 System Components
-The system is composed of the following major components:
-Client Side
-•	HTML5 
-•	CSS3 
-•	Bootstrap 5 
-•	JavaScript 
-
-Server Side
-•	PHP 8 
-•	Apache Web Server 
-Database
-•	MySQL Database Server 
-External Services
-•	Google Maps 
-•	WhatsApp 
-•	Telebirr 
-•	Commercial Bank of Ethiopia (CBE) 
-•	Awash Bank 
-•	Email Service 
+•	Payment Reports 
+Administration Module
+Responsible for
+•	User Accounts 
+•	Staff Accounts 
+•	Website Settings 
+•	Backup Management 
+•	Activity Logs 
+•	Security Monitoring 
 4.6 Technology Stack
 Layer	Technology
 Frontend	HTML5
@@ -500,63 +570,113 @@ Version Control	Git
 Repository	GitHub
 IDE	Visual Studio Code
 
-4.7 System Communication Flow
-The following steps describe how the system processes a typical request:
-1.	A guest accesses the website. 
-2.	The guest requests a room reservation. 
-3.	The browser sends an HTTPS request to the web server. 
-4.	The PHP backend validates the submitted information. 
-5.	The backend communicates with the MySQL database. 
-6.	The database returns the requested data. 
-7.	The backend processes the response. 
-8.	The web server sends the final response to the user's browser. 
+4.7 External Services
+The system integrates with several external platforms.
+Service	Purpose
+Google Maps	Hotel Location
+WhatsApp	Customer Communication
+Telebirr	Online Payment
+Commercial Bank of Ethiopia	Bank Payment
+Awash Bank	Bank Payment
+Email Service	Reservation Confirmation
+
 4.8 Security Architecture
-The system implements multiple security mechanisms to protect user information.
-Security measures include:
-•	Secure user authentication 
-•	Password hashing using bcrypt 
-•	Role-Based Access Control (RBAC) 
-•	Session management 
-•	Input validation 
-•	SQL Injection prevention 
-•	Cross-Site Scripting (XSS) protection 
-•	Cross-Site Request Forgery (CSRF) protection 
-•	Secure file upload validation 
-•	Activity logging 
-•	Regular database backups 
-4.9 Deployment Architecture
-The production environment consists of:
-Client Devices
-•	Desktop computers 
-•	Laptops 
-•	Tablets 
-•	Smartphones 
+The system implements multiple security mechanisms.
+Authentication
+•	Username and Password Login 
+•	Encrypted Password Storage 
+•	Session Management 
+Authorization
+Role-Based Access Control (RBAC)
+Roles include
+•	Guest 
+•	Receptionist 
+•	Manager 
+•	Administrator 
+•	Owner 
+Data Protection
+•	Password Hashing (bcrypt) 
+•	SQL Injection Prevention 
+•	XSS Protection 
+•	CSRF Protection 
+•	Secure File Upload 
+•	Input Validation 
+•	HTTPS Communication 
+Backup
+•	Automatic Database Backup 
+•	Manual Backup 
+•	Recovery Support 
+4.9 System Communication Flow
+Guest Reservation Process
+Guest
+
 ↓
-Internet
+
+Website
+
 ↓
-Hosting Server
-•	Apache 
-•	PHP 
+
+Reservation Form
+
 ↓
+
+PHP Validation
+
+↓
+
+Reservation Module
+
+↓
+
 MySQL Database
+
 ↓
-Backup Server (Future)
-4.10 Scalability
-The architecture is designed for future expansion.
-Future improvements may include:
-•	Android Application 
+
+Booking Confirmation
+
+↓
+
+Guest
+________________________________________
+4.10 Deployment Architecture
+The production system will consist of:
+Client Devices
+      │
+      ▼
+Internet
+      │
+      ▼
+Apache Web Server
+      │
+      ▼
+PHP Application
+      │
+      ▼
+MySQL Database
+4.11 Scalability
+The system has been designed to support future enhancements.
+Planned future features include:
+•	Android Mobile Application 
 •	iOS Application 
 •	QR Code Check-in 
 •	AI Chatbot 
 •	Online Payment Gateway 
-•	Multi-Branch Management 
 •	Inventory Management 
+•	Multi-Branch Hotel Support 
 •	Payroll System 
 •	API Integration 
 •	Business Intelligence Dashboard 
-4.11 Chapter Summary
-This chapter presented the architectural design of the GK My Halaba Hotel Management Information System. It described the three-tier architecture, major modules, system components, communication flow, deployment architecture, technology stack, security architecture, and scalability considerations. The architecture provides a reliable foundation for implementing the functional and non-functional requirements described in subsequent chapters.
-
-
-
+4.12 Traceability Preparation
+To ensure consistency throughout the Software Development Life Cycle (SDLC), every software component introduced in this chapter will later be mapped to:
+•	Functional Requirements (FR) 
+•	Non-Functional Requirements (NFR) 
+•	Use Cases (UC) 
+•	UML Diagrams 
+•	Database Tables 
+•	User Interface Screens 
+•	Source Code Modules 
+•	Test Cases 
+This traceability approach enables complete tracking of each requirement from analysis through implementation, testing, deployment, and maintenance.
+4.13 Chapter Summary
+This chapter presented the overall architecture of the GK My Halaba Hotel Management Information System. It described the architectural style, software layers, major system modules, technology stack, communication flow, deployment model, security architecture, and scalability considerations. These architectural decisions provide a strong foundation for implementing the functional and non-functional requirements described in the following chapters.
 
