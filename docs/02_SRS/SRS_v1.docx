@@ -1,0 +1,348 @@
+CHAPTER 1 – INTRODUCTION
+1.1 Purpose
+The purpose of this Software Requirements Specification (SRS) is to define the complete functional and non-functional requirements for the GK My Halaba Hotel Management Information System (HMIS).
+This document serves as the primary reference for the design, development, testing, deployment, and future maintenance of the system. It provides a clear understanding of the project's objectives, features, user roles, system behavior, business rules, and technical requirements.
+The proposed system aims to modernize hotel operations by replacing manual processes with an integrated web-based solution that simplifies room reservations, guest management, restaurant services, administrative tasks, reporting, and digital marketing. It also establishes a professional online presence through a responsive hotel website that allows guests to explore services and submit reservations conveniently.
+This SRS ensures that all stakeholders—including the hotel owner, managers, developers, testers, and future maintenance teams—share a common understanding of the system requirements before implementation begins.
+1.2 Scope
+The GK My Halaba Hotel Management Information System is a comprehensive web-based application designed to support the hotel's daily operations while providing customers with a modern online experience.
+The project consists of two major components:
+Public Website
+The public website will enable visitors to:
+•	Learn about the hotel 
+•	View rooms and room details 
+•	Explore the restaurant and café 
+•	Browse the photo gallery 
+•	Read hotel news and blog posts 
+•	Contact the hotel 
+•	Submit online booking requests 
+•	Access the website in both English and Amharic 
+•	View hotel location through Google Maps 
+Hotel Management System
+The administration system will allow authorized staff to:
+•	Manage rooms 
+•	Manage reservations 
+•	Manage guests 
+•	Manage payments 
+•	Manage restaurant information 
+•	Manage website content 
+•	Upload photos and videos 
+•	Generate reports 
+•	Manage staff accounts 
+•	Configure system settings 
+The system will be responsive and accessible from desktop computers, laptops, tablets, and smartphones.
+1.3 Business Context
+GK My Halaba Hotel is a newly established luxury hotel located in Halaba Kulito, Central Ethiopia. The hotel offers modern accommodation, restaurant services, traditional Ethiopian hospitality, and a secure environment for both business and leisure travelers.
+Although the hotel provides high-quality services, it currently lacks an integrated digital platform to manage operations and engage customers online. Reservations are handled manually, and there is no official website through which guests can explore services or submit booking requests.
+The development of this Hotel Management Information System will help the hotel establish a strong digital presence, improve operational efficiency, enhance customer satisfaction, and support future business growth.
+1.4 Objectives
+The main objectives of this project are:
+•	Develop a professional luxury hotel website. 
+•	Build a complete Hotel Management Information System. 
+•	Simplify room reservation processes. 
+•	Improve guest experience. 
+•	Increase operational efficiency. 
+•	Strengthen the hotel's online presence. 
+•	Support bilingual communication (English and Amharic). 
+•	Improve reporting and administrative control. 
+•	Provide a scalable platform for future expansion. 
+1.5 Intended Audience
+This document is intended for:
+•	Hotel Owner 
+•	General Manager 
+•	Receptionists 
+•	Website Administrator 
+•	Software Developers 
+•	System Testers 
+•	Database Administrators 
+•	Future Maintenance Team 
+•	University Supervisors (if used as an academic project) 
+1.6 Definitions
+Term	Definition
+HMIS	Hotel Management Information System
+Guest	A customer who books or stays at the hotel
+Reservation	A booking request for one or more rooms
+Check-in	The process of registering a guest upon arrival
+Check-out	The process of completing a guest's stay and departure
+Administrator	A user with full system management privileges
+Receptionist	A staff member responsible for reservations and guest services
+Dashboard	The administrative control panel used to manage the system
+
+
+1.7 Acronyms
+Acronym	Meaning
+HMIS	Hotel Management Information System
+SRS	Software Requirements Specification
+BRD	Business Requirements Document
+UI	User Interface
+UX	User Experience
+DBMS	Database Management System
+API	Application Programming Interface
+RBAC	Role-Based Access Control
+HTTPS	Hypertext Transfer Protocol Secure
+SQL	Structured Query Language
+
+1.8 References
+The preparation of this document is based on:
+•	IEEE 29148 – Systems and Software Engineering Requirements Specification 
+•	Software Engineering best practices 
+•	Information gathered from GK My Halaba Hotel management 
+•	Business requirements provided by the hotel owner and management team 
+1.9 Document Organization
+This Software Requirements Specification is organized into multiple chapters covering business requirements, overall system description, functional requirements, non-functional requirements, user roles, business rules, database requirements, security requirements, interface requirements, performance requirements, use cases, appendices, and other supporting information necessary for the successful development of the GK My Halaba Hotel Management Information System.
+
+CHAPTER 2 – BUSINESS OVERVIEW
+2.1 Background
+GK My Halaba Hotel is a newly established luxury hotel located in Halaba Kulito, Central Ethiopia. Established in 2026 by Abunu Mamo, the hotel was created to provide high-quality accommodation, exceptional hospitality, modern facilities, and a secure environment for both business and leisure travelers.
+The hotel offers comfortable guest rooms, a restaurant, café services, traditional Ethiopian coffee, and a peaceful atmosphere. Its mission is to deliver warm Ethiopian hospitality enhanced by modern service standards, ensuring every guest feels welcomed, connected, and inspired.
+Although the hotel provides quality services, it is still in the early stages of building its digital presence. At present, it has no official website, no centralized hotel management system, and no established social media platforms for customer engagement. Most operational activities are handled manually, which can become inefficient as the hotel grows.
+
+2.2 Vision
+To become the preferred destination in Southern Ethiopia for travelers seeking an elevated stay, authentic cuisine, and curated experiences.
+2.3 Mission
+We deliver warm Ethiopian hospitality enhanced by modern service standards and high security, ensuring every guest feels welcomed, connected, and inspired.
+2.4 Business Goals
+The primary business goals of GK My Halaba Hotel are:
+•	Provide exceptional hospitality and customer satisfaction. 
+•	Build a strong and recognizable digital presence. 
+•	Increase room occupancy through online reservations. 
+•	Improve operational efficiency by automating hotel processes. 
+•	Promote the hotel's restaurant, café, and other services. 
+•	Strengthen customer communication and engagement. 
+•	Support long-term business growth and expansion. 
+2.5 Current Challenges
+The hotel currently faces several business and operational challenges:
+•	No official website for promoting hotel services. 
+•	No online room reservation system. 
+•	Manual reservation and guest management processes. 
+•	Limited online visibility and digital marketing. 
+•	No centralized database for guests and bookings. 
+•	Limited reporting and business analytics. 
+•	No integrated content management platform. 
+•	Difficulty reaching potential customers outside the local area. 
+2.6 Proposed Solution
+To address these challenges, a comprehensive Hotel Management Information System (HMIS) will be developed.
+The proposed solution includes:
+Public Website
+•	Luxury and modern website 
+•	Hotel information 
+•	Room listings 
+•	Restaurant information 
+•	Photo gallery 
+•	Contact page 
+•	Online reservation request 
+•	English and Amharic language support 
+•	Google Maps integration 
+Hotel Management System
+•	Room management 
+•	Reservation management 
+•	Guest management 
+•	Payment management 
+•	Staff account management 
+•	Website content management 
+•	Gallery management 
+•	Reporting and analytics 
+•	Dashboard 
+•	Secure user authentication 
+2.7 Expected Benefits
+Benefits for Guests
+•	Easy access to hotel information. 
+•	Convenient online reservation process. 
+•	Faster communication with hotel staff. 
+•	Better user experience through a modern website. 
+•	Access to services in English and Amharic. 
+Benefits for Hotel Management
+•	Reduced manual work. 
+•	Improved operational efficiency. 
+•	Better reservation management. 
+•	Accurate reports and analytics. 
+•	Increased customer reach through digital marketing. 
+•	Stronger online reputation and brand visibility. 
+•	Centralized management of hotel information. 
+2.8 Project Success Criteria
+The project will be considered successful if:
+•	The website is fully functional and responsive. 
+•	Guests can submit reservation requests online. 
+•	Staff can efficiently manage reservations and rooms. 
+•	Reports are generated accurately. 
+•	The system is secure, reliable, and user-friendly. 
+•	The website supports both English and Amharic. 
+•	The hotel's digital presence improves through the new platform. 
+2.9 Stakeholders
+Stakeholder	Responsibility
+Hotel Owner	Project Sponsor and Final Decision Maker
+General Manager	Business Operations
+Receptionists	Reservation and Guest Management
+Guests	End Users of the Website
+Website Administrator	Website Content Management
+System Administrator	Technical Administration
+Israel Aklilu	System Analyst, Designer, and Developer
+
+
+2.10 Project Scope Summary
+Included
+•	Luxury hotel website 
+•	Hotel Management Information System 
+•	Online reservation 
+•	Room management 
+•	Guest management 
+•	Payment recording 
+•	Restaurant information 
+•	Gallery management 
+•	Blog management 
+•	Dashboard 
+•	Reports 
+•	User management 
+•	Responsive design 
+•	English and Amharic support 
+Excluded (Version 1)
+•	Mobile application 
+•	Inventory management 
+•	Payroll management 
+•	AI chatbot 
+•	Third-party travel agency integration
+
+
+
+
+CHAPTER 3 – OVERALL DESCRIPTION
+3.1 Product Perspective
+The GK My Halaba Hotel Management Information System (HMIS) is a new, integrated software solution designed to digitalize and automate the operations of GK My Halaba Hotel.
+Currently, the hotel operates many of its daily activities manually and does not have an official website or centralized management system. This project will introduce a modern, secure, and scalable platform consisting of two major components:
+•	A public-facing luxury hotel website for guests.
+•	A secure administrative management system for hotel staff.
+The system will centralize hotel operations, improve communication with guests, simplify reservation management, and strengthen the hotel's online presence. It is designed to grow with the business and support future enhancements such as a mobile application, online payment gateway integrations, and third-party booking platforms.
+3.2 System Objectives
+The primary objectives of the proposed system are to:
+•	Establish a professional online presence for GK My Halaba Hotel.
+•	Allow guests to view hotel information and submit reservation requests online.
+•	Improve operational efficiency through automation.
+•	Simplify room, guest, and booking management.
+•	Enable hotel administrators to manage website content without technical expertise.
+•	Support bilingual content in English and Amharic.
+•	Improve decision-making through reports and dashboard analytics.
+•	Increase customer satisfaction through faster and more reliable services.
+3.3 Product Functions
+The system will provide the following major functions.
+Public Website
+•	Display hotel information
+•	Display available room types
+•	Display restaurant and café services
+•	Online reservation request
+•	Contact form
+•	Google Maps integration
+•	Photo and video gallery
+•	Guest testimonials
+•	Blog and news section
+•	Frequently Asked Questions (FAQ)
+•	English and Amharic language support
+Hotel Management System
+•	Secure user authentication
+•	Dashboard with statistics
+•	Reservation management
+•	Room management
+•	Guest management
+•	Staff management
+•	Website content management
+•	Gallery management
+•	Restaurant menu management
+•	Payment recording
+•	Report generation
+•	User role and permission management
+•	System settings and configuration
+3.4 User Classes and Characteristics
+The system will support multiple user categories with different responsibilities and access permissions.
+User Class	Description
+Guest	Visits the website, views information, and submits reservation requests.
+Receptionist	Manages reservations, guest records, and room assignments.
+General Manager	Oversees hotel operations, approves activities, and views reports.
+Administrator	Manages the system, website content, users, and settings.
+Owner	Has full access to reports, analytics, and all system features.
+
+3.5 Operating Environment
+The system will operate in the following environment.
+Server Environment
+•	Operating System: Windows Server or Linux
+•	Web Server: Apache
+•	PHP Version: PHP 8.x
+•	Database: MySQL 8.x
+Client Environment
+•	Windows
+•	Android
+•	iPhone (iOS)
+•	macOS
+•	Linux
+Supported Browsers
+•	Google Chrome
+•	Microsoft Edge
+•	Mozilla Firefox
+•	Safari
+Responsive Devices
+•	Desktop computers
+•	Laptop computers
+•	Tablets
+•	Smartphones
+3.6 Design and Implementation Constraints
+The following constraints apply to the development of the system.
+•	The website shall support both English and Amharic.
+•	The system shall be responsive across different screen sizes.
+•	The database shall use MySQL.
+•	The backend shall be developed using PHP.
+•	The frontend shall use HTML5, CSS3, Bootstrap 5, and JavaScript.
+•	Internet access is required for online reservations and administration.
+•	User authentication shall be required for administrative access.
+•	The system shall maintain data security and privacy.
+3.7 User Documentation
+The following documentation will be provided.
+•	Business Requirements Document (BRD)
+•	Software Requirements Specification (SRS)
+•	User Manual
+•	Administrator Manual
+•	Installation Guide
+•	Deployment Guide
+•	Database Documentation
+•	API Documentation (if APIs are introduced in future versions)
+3.8 Assumptions and Dependencies
+The development of the system is based on the following assumptions.
+Assumptions
+•	The hotel management will provide accurate business information.
+•	Reliable internet connectivity will be available for online services.
+•	Authorized staff members will receive training before using the system.
+•	Hotel branding materials (logo, images, and promotional content) will be available.
+•	The hotel will maintain updated room and pricing information.
+Dependencies
+•	Domain name registration.
+•	Web hosting services.
+•	PHP runtime environment.
+•	MySQL database server.
+•	Payment service providers (Telebirr, CBE, and Awash Bank for payment instructions or future integrations).
+•	Google Maps services.
+3.9 System Context
+The Hotel Management Information System interacts with several external users and services.
+External Users
+•	Guests
+•	Receptionists
+•	General Manager
+•	Owner
+•	Administrator
+External Services
+•	Google Maps
+•	WhatsApp
+•	Telebirr
+•	Commercial Bank of Ethiopia (CBE)
+•	Awash Bank
+•	Email Service
+
+3.10 Future Expansion
+The system is designed to support future enhancements, including:
+•	Mobile application (Android and iOS)
+•	Online payment gateway integration
+•	AI-powered chatbot
+•	QR code check-in
+•	Loyalty and rewards program
+•	Multi-branch hotel management
+•	Inventory management
+•	Employee payroll system
+•	Integration with third-party booking platforms
+
+
