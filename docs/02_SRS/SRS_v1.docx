@@ -2047,3 +2047,201 @@ General Rules	BR-037 – BR-040
 8.13 Chapter Summary
 This chapter defined 40 business rules (BR-001 to BR-040) that govern the operation of the GK My Halaba Hotel Management Information System. These rules establish the hotel's operational policies for reservations, guest management, room allocation, payments, restaurant services, website content, user management, reporting, and system administration. They provide the foundation for implementing business logic, database constraints, use cases, and validation rules throughout the application.
 
+CHAPTER 9
+USE CASE SPECIFICATION
+9.1 Introduction
+A Use Case Specification describes how users (actors) interact with the GK My Halaba Hotel Management Information System (HMIS) to achieve specific business goals. Each use case represents a complete interaction between an actor and the system, detailing the sequence of actions, alternative flows, exceptions, and expected outcomes.
+The use cases defined in this chapter provide the foundation for system design, UML diagrams, implementation, testing, and user training. Every use case is linked to the corresponding Functional Requirements (FR) and Business Rules (BR) to maintain full traceability throughout the Software Development Life Cycle (SDLC).
+Primary Actors
+•	Guest 
+•	Receptionist 
+•	Manager 
+•	Administrator 
+•	Owner 
+•	Accountant 
+9.2 Use Case Template
+Every use case follows the same professional structure:
+•	Use Case ID 
+•	Use Case Name 
+•	Primary Actor 
+•	Supporting Actors 
+•	Description 
+•	Related Functional Requirements 
+•	Related Business Rules 
+•	Preconditions 
+•	Trigger 
+•	Main Success Scenario 
+•	Alternative Flows 
+•	Exception Flows 
+•	Postconditions 
+•	Priority 
+9.3 UC-001 – User Login
+Use Case ID
+UC-001
+Use Case Name
+User Login
+Primary Actor
+Administrator, Owner, Manager, Receptionist, Accountant
+Description
+Allows authorized users to securely log into the hotel management system.
+Related Functional Requirements
+•	FR-001 User Authentication 
+•	FR-002 User Authorization 
+Related Business Rules
+•	BR-030 Unique Username 
+•	BR-031 Password Policy 
+Preconditions
+•	User account exists. 
+•	User account is active. 
+Trigger
+User clicks Login.
+Main Success Scenario
+1.	User opens Login page. 
+2.	User enters username. 
+3.	User enters password. 
+4.	User clicks Login. 
+5.	System validates credentials. 
+6.	System verifies user role. 
+7.	Dashboard is displayed. 
+Alternative Flow
+5a. Invalid password.
+•	Display error message. 
+•	Allow another attempt. 
+Exception Flow
+User account is disabled.
+System denies access.
+Postconditions
+Authenticated session is created.
+Priority
+High
+9.4 UC-002 – Logout
+Use Case ID
+UC-002
+Primary Actor
+All authenticated users
+Description
+Allows users to safely terminate their session.
+Related Functional Requirements
+FR-003 Logout
+Preconditions
+User is logged in.
+Trigger
+User clicks Logout.
+Main Success Scenario
+1.	User selects Logout. 
+2.	System destroys active session. 
+3.	User is redirected to Login page. 
+Postconditions
+User session ends securely.
+Priority
+High
+9.5 UC-003 – Create User Account
+Primary Actor
+Administrator
+Description
+Administrator creates a new staff account.
+Related Functional Requirements
+FR-010 User Management
+Related Business Rules
+BR-030
+BR-032
+Preconditions
+Administrator is logged in.
+Main Success Scenario
+1.	Open User Management. 
+2.	Click Add User. 
+3.	Enter employee details. 
+4.	Select role. 
+5.	Save. 
+6.	System creates account. 
+Alternative Flow
+Username already exists.
+System requests another username.
+Postconditions
+New user account becomes active.
+Priority
+High
+9.6 UC-004 – Update User Information
+Primary Actor
+Administrator
+Description
+Allows modification of existing user information.
+Preconditions
+Administrator logged in.
+Main Flow
+1.	Search user. 
+2.	Select user. 
+3.	Edit information. 
+4.	Save changes. 
+5.	System updates record. 
+Postconditions
+User information updated successfully.
+Priority
+Medium
+9.7 UC-005 – Deactivate User Account
+Primary Actor
+Administrator
+Description
+Deactivates a staff account without deleting historical records.
+Preconditions
+User exists.
+Main Flow
+1.	Select account. 
+2.	Click Deactivate. 
+3.	Confirm. 
+4.	System disables account. 
+Business Rule
+BR-033
+Postconditions
+User cannot log in.
+Priority
+Medium
+9.8 UC-006 – Change Password
+Primary Actor
+All authenticated users
+Description
+Allows users to change their passwords.
+Preconditions
+User logged in.
+Main Success Scenario
+1.	Open Profile. 
+2.	Select Change Password. 
+3.	Enter current password. 
+4.	Enter new password. 
+5.	Confirm password. 
+6.	Save. 
+7.	Password updated. 
+Alternative Flow
+Current password incorrect.
+Display error.
+Priority
+High
+9.9 UC-007 – Reset Password
+Primary Actor
+Administrator
+Description
+Administrator resets another user's password.
+Preconditions
+Administrator logged in.
+Main Flow
+1.	Search user. 
+2.	Select Reset Password. 
+3.	Enter temporary password. 
+4.	Save. 
+Postconditions
+User receives temporary password.
+Priority
+Medium
+9.10 Traceability Matrix
+Use Case	Functional Requirement	Business Rule
+UC-001	FR-001, FR-002	BR-030, BR-031
+UC-002	FR-003	—
+UC-003	FR-010	BR-030, BR-032
+UC-004	FR-010	BR-032
+UC-005	FR-010	BR-033
+UC-006	FR-001	BR-031
+UC-007	FR-010	BR-031
+
+9.11 Part 1 Summary
+This section introduced the Use Case Specification chapter and defined the first seven administrative use cases related to user authentication and account management. These use cases establish the foundation for secure access control and system administration.
+
