@@ -3229,6 +3229,270 @@ UC-025	FR-090	BR-039
 9.33 Part 3 Summary
 This section defined use cases related to payment processing, invoice generation, restaurant management, reporting, website content management, gallery administration, blog publishing, customer communication, and system backup. These use cases support the hotel's financial operations, online presence, and administrative management, completing the core operational interactions of the GK My Halaba Hotel Management Information System.
 
+9.34 UC-026 – Manage Rooms
+Use Case ID
+UC-026
+Primary Actor
+Administrator
+Manager
+Description
+Allows authorized users to add, update, remove, and manage hotel rooms.
+Related Functional Requirements
+•	FR-016 Room Management 
+Related Business Rules
+•	BR-010 Unique Room Number 
+•	BR-011 Room Status 
+•	BR-012 Room Price 
+Preconditions
+•	User is authenticated. 
+•	User has room management permission. 
+Main Success Scenario
+1.	Open Room Management. 
+2.	Add or select a room. 
+3.	Enter or modify room details. 
+4.	Save changes. 
+5.	System validates room information. 
+6.	Room information is updated successfully. 
+Postconditions
+Room information is stored successfully.
+Priority
+High
+9.35 UC-027 – Manage Guest Information
+Use Case ID
+UC-027
+Primary Actor
+Receptionist
+Description
+Allows receptionists to register, update, and search guest information.
+Related Functional Requirements
+•	FR-018 Guest Management 
+Related Business Rules
+•	BR-006 Guest Registration 
+•	BR-008 Guest History 
+Preconditions
+Receptionist is logged in.
+Main Success Scenario
+1.	Open Guest Management. 
+2.	Register a new guest or search an existing guest. 
+3.	Update guest information if required. 
+4.	Save. 
+5.	System stores updated information. 
+Postconditions
+Guest records remain current.
+Priority
+High
+9.36 UC-028 – Manage Staff Accounts
+Use Case ID
+UC-028
+Primary Actor
+Administrator
+Description
+Allows administrators to manage hotel staff accounts and assigned roles.
+Related Functional Requirements
+•	FR-010 User Management 
+Related Business Rules
+•	BR-032 User Roles 
+•	BR-033 Account Deactivation 
+Preconditions
+Administrator is authenticated.
+Main Success Scenario
+1.	Open Staff Management. 
+2.	Add, edit, activate, or deactivate staff accounts. 
+3.	Assign user roles. 
+4.	Save changes. 
+5.	System updates staff records. 
+Postconditions
+Staff information is updated successfully.
+Priority
+High
+9.37 UC-029 – View Dashboard Analytics
+Use Case ID
+UC-029
+Primary Actor
+Owner
+Manager
+Administrator
+Description
+Displays real-time operational statistics and performance indicators.
+Related Functional Requirements
+•	FR-071 Dashboard Analytics 
+Preconditions
+Authorized user is logged in.
+Main Success Scenario
+1.	Open Dashboard. 
+2.	System retrieves statistics. 
+3.	Display charts and key performance indicators (KPIs). 
+Dashboard Information
+•	Total Reservations 
+•	Occupied Rooms 
+•	Available Rooms 
+•	Daily Revenue 
+•	Monthly Revenue 
+•	Restaurant Sales 
+•	Recent Reservations 
+Postconditions
+Dashboard analytics displayed.
+Priority
+High
+9.38 UC-030 – View Audit Logs
+Use Case ID
+UC-030
+Primary Actor
+Owner
+Administrator
+Description
+Allows authorized users to review important system activities.
+Related Functional Requirements
+•	FR-091 Audit Log Management 
+Related Business Rules
+•	BR-036 Audit Logs 
+Main Success Scenario
+1.	Open Audit Logs. 
+2.	Select date range. 
+3.	View activities. 
+4.	Filter results by user or activity. 
+Logged Activities
+•	Login 
+•	Logout 
+•	Reservation Creation 
+•	Payment Recording 
+•	Room Updates 
+•	User Management 
+Postconditions
+Audit records displayed.
+Priority
+High
+9.39 UC-031 – Send Notifications
+Use Case ID
+UC-031
+Primary Actor
+Administrator
+Receptionist
+Description
+Sends notifications to guests regarding reservations and hotel services.
+Related Functional Requirements
+•	FR-084 Notification Management 
+Main Success Scenario
+1.	Select guest. 
+2.	Choose notification type. 
+3.	Compose or use template. 
+4.	Send notification. 
+Notification Channels
+•	SMS (Future) 
+•	Email 
+•	WhatsApp (Future) 
+Postconditions
+Notification successfully sent or queued.
+Priority
+Medium
+9.40 UC-032 – Manage Hotel Settings
+Use Case ID
+UC-032
+Primary Actor
+Owner
+Administrator
+Description
+Allows authorized users to configure global hotel settings.
+Related Functional Requirements
+•	FR-092 System Configuration 
+Main Success Scenario
+1.	Open Settings. 
+2.	Modify hotel information. 
+3.	Save changes. 
+4.	System validates configuration. 
+5.	Updated settings become active. 
+Settings Include
+•	Hotel Name 
+•	Contact Information 
+•	Payment Accounts 
+•	Website Configuration 
+•	Tax Settings 
+•	Booking Rules 
+Postconditions
+Configuration updated.
+Priority
+High
+9.41 UC-033 – View Booking History
+Use Case ID
+UC-033
+Primary Actor
+Receptionist
+Manager
+Description
+Displays complete booking history for a guest or room.
+Related Functional Requirements
+•	FR-027 View Reservation 
+Main Success Scenario
+1.	Search guest or room. 
+2.	Display historical reservations. 
+3.	View booking details. 
+Postconditions
+Booking history displayed.
+Priority
+Medium
+9.42 UC-034 – Generate Occupancy Statistics
+Use Case ID
+UC-034
+Primary Actor
+Manager
+Owner
+Description
+Generates occupancy reports for management decision-making.
+Related Functional Requirements
+•	FR-070 Reporting 
+Main Success Scenario
+1.	Select reporting period. 
+2.	Generate occupancy report. 
+3.	Display occupancy percentage. 
+4.	Export report if required. 
+Statistics Include
+•	Occupancy Rate 
+•	Vacant Rooms 
+•	Peak Periods 
+•	Average Length of Stay 
+Postconditions
+Occupancy report generated.
+Priority
+Medium
+9.43 UC-035 – Export System Data
+Use Case ID
+UC-035
+Primary Actor
+Owner
+Administrator
+Description
+Exports operational data for reporting, backup, or external analysis.
+Related Functional Requirements
+•	FR-093 Data Export 
+Preconditions
+Authorized user is logged in.
+Main Success Scenario
+1.	Select data type. 
+2.	Select date range. 
+3.	Select export format. 
+4.	Generate export. 
+5.	Download file. 
+Export Formats
+•	PDF 
+•	Excel 
+•	CSV 
+Postconditions
+Requested data exported successfully.
+Priority
+Medium
+9.44 Complete Use Case Traceability Matrix
+Use Case Range	Description
+UC-001 – UC-007	User Authentication & User Management
+UC-008 – UC-015	Reservation & Front Office Operations
+UC-016 – UC-025	Payments, Restaurant & Website Management
+UC-026 – UC-035	Administration, Reporting & System Configuration
+
+9.45 Chapter Summary
+This chapter defined 35 detailed use cases (UC-001 to UC-035) for the GK My Halaba Hotel Management Information System. The use cases describe interactions between guests, receptionists, managers, administrators, accountants, and owners, covering authentication, reservations, room management, guest services, payment processing, restaurant operations, reporting, website administration, notifications, system configuration, and data export.
+Each use case is linked to the corresponding Functional Requirements and Business Rules, ensuring complete traceability throughout the software development life cycle. These specifications will serve as the primary reference for UML diagrams, database design, implementation, testing, and user training.
+9.46 Chapter Conclusion
+The use case specifications presented in this chapter establish the behavioral foundation of the GK My Halaba Hotel Management Information System. Together with the functional and non-functional requirements defined in previous chapters, they provide a comprehensive blueprint for developing a secure, scalable, and user-friendly hotel management solution.
+
 
 
 
