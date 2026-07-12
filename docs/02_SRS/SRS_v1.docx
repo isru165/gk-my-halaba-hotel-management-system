@@ -1142,3 +1142,189 @@ The system shall record important activities, including:
 Priority: High
 End of Chapter 5 – Part 3
 
+5.14 Notification Management Module
+FR-071 Booking Confirmation Notification
+Description
+The system shall automatically notify guests when a reservation has been successfully confirmed.
+Priority
+High
+Notification Channels
+•	Email 
+•	WhatsApp (Future Enhancement) 
+•	SMS (Future Enhancement) 
+FR-072 Reservation Reminder
+The system shall send reminders before the guest's scheduled check-in date.
+Priority: Medium
+FR-073 Payment Confirmation
+The system shall notify guests immediately after successful payment.
+Priority: High
+FR-074 Cancellation Notification
+The system shall notify guests whenever a reservation is cancelled.
+Priority: High
+FR-075 Admin Notifications
+Administrators shall receive notifications for:
+•	New Reservations 
+•	Payment Received 
+•	Room Maintenance Requests 
+•	Low Inventory Alerts 
+•	New Website Messages 
+Priority: High
+5.15 Website Contact Module
+FR-076 Contact Form
+Visitors shall submit inquiries through the website contact form.
+Required Fields:
+•	Full Name 
+•	Email 
+•	Phone Number 
+•	Subject 
+•	Message 
+Priority: High
+FR-077 Frequently Asked Questions (FAQ)
+The website shall display frequently asked questions and answers.
+Priority: Medium
+FR-078 Google Maps Integration
+The website shall display the hotel's location using Google Maps.
+Priority: High
+FR-079 Social Media Integration
+The website shall provide links to:
+•	Facebook 
+•	Instagram 
+•	TikTok 
+•	Telegram 
+Priority: High
+FR-080 Newsletter Subscription
+Visitors may subscribe to receive promotional offers and hotel updates.
+Priority: Low
+5.16 Administration Dashboard
+FR-081 Dashboard Overview
+The dashboard shall display:
+•	Today's Reservations 
+•	Available Rooms 
+•	Occupied Rooms 
+•	Revenue Summary 
+•	Restaurant Sales 
+•	Recent Activities 
+Priority: High
+FR-082 System Configuration
+Administrators shall configure:
+•	Hotel Information 
+•	Contact Details 
+•	Business Hours 
+•	Payment Methods 
+•	Website Settings 
+Priority: High
+
+FR-083 Backup Database
+The system shall allow administrators to create manual database backups.
+Priority: High
+FR-084 Restore Database
+Administrators shall restore the database from previously created backups.
+Priority: High
+FR-085 Manage System Logs
+Administrators shall view system logs for monitoring and troubleshooting.
+Priority: Medium
+5.17 Security Requirements
+FR-086 Role-Based Access Control
+The system shall restrict access based on user roles and permissions.
+Examples:
+•	Owner 
+•	Administrator 
+•	Manager 
+•	Receptionist 
+•	Accountant 
+Priority: High
+FR-087 Password Encryption
+All user passwords shall be securely encrypted before storage.
+Priority: High
+FR-088 Session Management
+The system shall automatically terminate inactive user sessions after a configurable timeout.
+Priority: High
+FR-089 Data Validation
+The system shall validate all user input before processing.
+Examples:
+•	Required Fields 
+•	Email Format 
+•	Phone Number Format 
+•	Date Validation 
+•	Payment Amount Validation 
+Priority: High
+FR-090 Activity Logging
+The system shall record critical user activities for auditing and security purposes.
+Priority: High
+5.18 System Integration
+FR-091 Online Payment Integration
+The system shall integrate with:
+•	Telebirr 
+•	Commercial Bank of Ethiopia (CBE) 
+•	Awash Bank 
+Priority: High
+FR-092 Email Integration
+The system shall send:
+•	Reservation Confirmations 
+•	Payment Receipts 
+•	Contact Form Responses 
+Priority: High
+FR-093 Website Integration
+The public website shall communicate with the hotel management system to synchronize:
+•	Room Availability 
+•	Reservations 
+•	Pricing 
+•	Gallery 
+•	Contact Information 
+Priority: High
+FR-094 Multi-language Support
+The website shall support:
+•	English 
+•	Amharic 
+Future versions may include additional Ethiopian languages.
+Priority: Medium
+FR-095 Responsive Design
+The website shall function correctly on:
+•	Desktop Computers 
+•	Laptops 
+•	Tablets 
+•	Smartphones 
+Priority: High
+5.19 Future Enhancements
+FR-096 Loyalty Program
+The system may support a customer loyalty and rewards program.
+Priority: Low
+FR-097 Mobile Application
+A mobile application may be developed for guests and hotel staff.
+Priority: Low
+FR-098 AI-Based Recommendations
+The system may recommend rooms or promotional offers based on guest preferences.
+Priority: Low
+FR-099 Business Intelligence Dashboard
+Future versions may include advanced analytics and business intelligence features.
+Priority: Low
+FR-100 Third-Party Integrations
+The system may integrate with:
+•	Online Travel Agencies (OTAs) 
+•	Google Hotel Search 
+•	Booking Platforms 
+•	Accounting Software 
+Priority: Low
+5.20 Requirements Traceability Summary
+Module	Requirement IDs
+Authentication	FR-001 – FR-005
+User Management	FR-006 – FR-010
+Guest Management	FR-011 – FR-015
+Room Management	FR-016 – FR-025
+Reservation Management	FR-026 – FR-035
+Check-in Management	FR-036 – FR-040
+Check-out Management	FR-041 – FR-045
+Payment Management	FR-046 – FR-050
+Restaurant Management	FR-051 – FR-060
+Website Management	FR-061 – FR-065
+Reporting & Analytics	FR-066 – FR-070
+Notifications	FR-071 – FR-075
+Contact Module	FR-076 – FR-080
+Administration	FR-081 – FR-085
+Security	FR-086 – FR-090
+System Integration	FR-091 – FR-095
+Future Enhancements	FR-096 – FR-100
+
+Chapter 5 Summary
+This chapter defined 100 functional requirements for the GK My Halaba Hotel Management System. Each requirement has a unique identifier (FR-001 to FR-100), enabling traceability throughout analysis, design, implementation, testing, and maintenance. These requirements provide the foundation for the UML models, database schema, user interface, backend development, and system testing activities that follow in subsequent chapters.
+
