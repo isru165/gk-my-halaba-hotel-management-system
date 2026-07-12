@@ -2714,5 +2714,249 @@ UC-007	FR-010	BR-031
 
 9.11 Part 1 Summary
 This section introduced the Use Case Specification chapter and defined the first seven administrative use cases related to user authentication and account management. These use cases establish the foundation for secure access control and system administration.
+9.12 UC-008 – Search Room Availability
+Use Case ID
+UC-008
+Primary Actor
+•	Guest 
+•	Receptionist 
+Description
+Allows users to search for available rooms based on check-in date, check-out date, room type, and number of guests.
+Related Functional Requirements
+•	FR-016 Room Management 
+•	FR-026 Reservation Management 
+Related Business Rules
+•	BR-002 Room Availability 
+Preconditions
+•	The system is operational. 
+•	Room information has been configured. 
+Trigger
+The user selects Search Rooms.
+Main Success Scenario
+1.	User enters check-in date. 
+2.	User enters check-out date. 
+3.	User selects room type. 
+4.	User enters the number of guests. 
+5.	System validates the input. 
+6.	System checks room availability. 
+7.	System displays all available rooms with prices. 
+Alternative Flow
+No rooms are available.
+The system informs the user and suggests different dates or room types.
+Postconditions
+Available rooms are displayed.
+Priority
+High
+9.13 UC-009 – Create Reservation
+Use Case ID
+UC-009
+Primary Actor
+•	Guest 
+•	Receptionist 
+Description
+Allows a guest or receptionist to create a room reservation.
+Related Functional Requirements
+•	FR-026 Reservation Management 
+Related Business Rules
+•	BR-001 Reservation Required Information 
+•	BR-003 Reservation Number 
+Preconditions
+•	A room is available. 
+•	Guest information is provided. 
+Trigger
+User clicks Reserve Room.
+Main Success Scenario
+1.	Select available room. 
+2.	Enter guest information. 
+3.	Review reservation details. 
+4.	System calculates total amount. 
+5.	Confirm reservation. 
+6.	System generates Reservation ID. 
+7.	Reservation status becomes Confirmed. 
+8.	Confirmation message is displayed. 
+Alternative Flow
+Guest cancels before confirmation.
+Reservation is discarded.
+Exception Flow
+Selected room becomes unavailable during booking.
+System requests another room selection.
+Postconditions
+Reservation is successfully stored.
+Priority
+High
+9.14 UC-010 – Update Reservation
+Use Case ID
+UC-010
+Primary Actor
+Receptionist
+Description
+Allows modification of an existing reservation.
+Related Functional Requirements
+•	FR-028 Update Reservation 
+Preconditions
+Reservation exists.
+Main Success Scenario
+1.	Search reservation. 
+2.	Select reservation. 
+3.	Modify reservation details. 
+4.	Save changes. 
+5.	System validates room availability. 
+6.	Reservation is updated. 
+Alternative Flow
+Requested room is unavailable.
+System requests another room.
+Postconditions
+Reservation information is updated.
+Priority
+Medium
+9.15 UC-011 – Cancel Reservation
+Use Case ID
+UC-011
+Primary Actor
+Receptionist
+Description
+Allows cancellation of an existing reservation.
+Related Functional Requirements
+•	FR-029 Cancel Reservation 
+Related Business Rules
+•	BR-005 Reservation Status 
+Preconditions
+Reservation exists.
+Main Success Scenario
+1.	Search reservation. 
+2.	Open reservation. 
+3.	Click Cancel. 
+4.	Confirm cancellation. 
+5.	Reservation status changes to Cancelled. 
+6.	Room becomes available again. 
+Postconditions
+Reservation cancelled successfully.
+Priority
+Medium
+9.16 UC-012 – Assign Room
+Use Case ID
+UC-012
+Primary Actor
+Receptionist
+Description
+Assigns an available room to a guest.
+Related Functional Requirements
+•	FR-020 Room Assignment 
+Related Business Rules
+•	BR-011 Room Status 
+Preconditions
+Guest has a valid reservation.
+Main Success Scenario
+1.	Search reservation. 
+2.	Select available room. 
+3.	Assign room. 
+4.	System updates room status to Reserved. 
+5.	Assignment confirmation displayed. 
+Postconditions
+Room assigned successfully.
+Priority
+High
+9.17 UC-013 – Check-in Guest
+Use Case ID
+UC-013
+Primary Actor
+Receptionist
+Description
+Registers a guest upon arrival and marks the room as occupied.
+Related Functional Requirements
+•	FR-036 Guest Check-in 
+Related Business Rules
+•	BR-015 Check-in Eligibility 
+•	BR-016 Payment Before Check-in 
+Preconditions
+•	Reservation exists or walk-in room available. 
+•	Required identification verified. 
+Main Success Scenario
+1.	Search reservation. 
+2.	Verify guest identity. 
+3.	Verify payment requirements. 
+4.	Assign room if necessary. 
+5.	Record check-in. 
+6.	Room status changes to Occupied. 
+7.	Guest receives room key. 
+Alternative Flow
+Guest has no reservation.
+Receptionist creates a walk-in reservation if rooms are available.
+Exception Flow
+No rooms available.
+Check-in cannot proceed.
+Postconditions
+Guest successfully checked in.
+Priority
+High
+9.18 UC-014 – Check-out Guest
+Use Case ID
+UC-014
+Primary Actor
+Receptionist
+Description
+Completes the guest's stay and finalizes billing.
+Related Functional Requirements
+•	FR-041 Guest Check-out 
+Related Business Rules
+•	BR-017 Check-out Process 
+•	BR-018 Invoice Generation 
+Preconditions
+Guest is currently checked in.
+Main Success Scenario
+1.	Search guest. 
+2.	Review outstanding charges. 
+3.	Calculate total bill. 
+4.	Receive payment if required. 
+5.	Generate invoice. 
+6.	Complete check-out. 
+7.	Room status changes to Cleaning. 
+Alternative Flow
+Outstanding balance exists.
+Guest completes payment before checkout.
+Postconditions
+Guest checked out successfully.
+Priority
+High
+9.19 UC-015 – View Reservation Details
+Use Case ID
+UC-015
+Primary Actor
+Receptionist, Manager
+Description
+Allows authorized staff to view complete reservation information.
+Related Functional Requirements
+•	FR-027 View Reservation 
+Preconditions
+Reservation exists.
+Main Success Scenario
+1.	Search reservation. 
+2.	Select reservation. 
+3.	System displays: 
+o	Reservation ID 
+o	Guest Information 
+o	Room Details 
+o	Check-in Date 
+o	Check-out Date 
+o	Payment Status 
+o	Reservation Status 
+Postconditions
+Reservation details are displayed.
+Priority
+Medium
+9.20 Traceability Matrix
+Use Case	Functional Requirements	Business Rules
+UC-008	FR-016, FR-026	BR-002
+UC-009	FR-026	BR-001, BR-003
+UC-010	FR-028	BR-002
+UC-011	FR-029	BR-005
+UC-012	FR-020	BR-011
+UC-013	FR-036	BR-015, BR-016
+UC-014	FR-041	BR-017, BR-018
+UC-015	FR-027	—
+
+9.21 Part 2 Summary
+This section defined the primary operational use cases for reservation management and front-desk activities, including room searching, reservation creation and modification, room assignment, guest check-in, guest check-out, and reservation viewing. These use cases represent the core workflow of the GK My Halaba Hotel Management Information System and provide the basis for the corresponding UML diagrams and implementation.
+
 
 
