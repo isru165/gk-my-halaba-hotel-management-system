@@ -963,3 +963,182 @@ The system shall generate a check-in confirmation containing:
 Priority: Medium
 End of Chapter 5 – Part 2
 
+5.9 Check-out Management Module
+FR-041 Guest Check-out
+Description
+The system shall allow receptionists to check guests out upon completion of their stay.
+Priority
+High
+Actors
+•	Receptionist 
+•	Manager 
+Input
+•	Guest ID 
+•	Reservation ID 
+•	Room Number 
+Output
+•	Guest successfully checked out 
+•	Invoice generated 
+•	Room status updated 
+Acceptance Criteria
+•	Outstanding payments are verified. 
+•	Room becomes available after check-out. 
+•	Check-out date is recorded. 
+FR-042 Invoice Generation
+The system shall automatically generate an invoice including:
+•	Guest Information 
+•	Reservation Number 
+•	Room Charges 
+•	Restaurant Charges 
+•	Additional Services 
+•	Taxes 
+•	Total Amount 
+Priority: High
+FR-043 Update Room Status
+After check-out, the room status shall change:
+Occupied → Cleaning
+After housekeeping confirms cleaning:
+Cleaning → Available
+Priority: High
+FR-044 Check-out History
+The system shall maintain complete records of guest departures.
+Priority: Medium
+FR-045 Late Check-out
+The system shall support late check-out with additional charges when applicable.
+Priority: Medium
+5.10 Payment Management Module
+FR-046 Record Payment
+The system shall record all guest payments.
+Supported payment methods:
+•	Cash 
+•	Telebirr 
+•	CBE Bank 
+•	Awash Bank 
+Priority: High
+FR-047 Payment Verification
+The system shall verify successful online payments before confirming reservations.
+Priority: High
+FR-048 Payment Receipt
+The system shall generate printable payment receipts.
+Priority: High
+FR-049 Refund Management
+Authorized staff shall process reservation refunds according to hotel policy.
+Priority: Medium
+
+FR-050 Payment Reports
+Managers shall view:
+•	Daily Revenue 
+•	Monthly Revenue 
+•	Annual Revenue 
+•	Outstanding Payments 
+Priority: High
+5.11 Restaurant Management Module
+FR-051 Restaurant Menu Management
+Administrators shall:
+•	Add Menu Items 
+•	Edit Menu Items 
+•	Delete Menu Items 
+•	Categorize Food 
+Priority: High
+FR-052 Food Ordering
+Restaurant staff shall create customer food orders.
+Priority: High
+FR-053 Beverage Ordering
+The system shall support ordering:
+•	Coffee 
+•	Macchiato 
+•	Tea 
+•	Juice 
+•	Soft Drinks 
+Priority: High
+FR-054 Traditional Food Ordering
+The restaurant shall manage Ethiopian traditional food orders.
+Priority: Medium
+FR-055 Order Billing
+Restaurant orders shall automatically generate bills.
+Priority: High
+FR-056 Link Restaurant Bill to Guest
+Guests staying in the hotel may charge restaurant expenses directly to their room.
+Priority: High
+FR-057 Restaurant Sales Report
+Managers shall view:
+•	Daily Sales 
+•	Weekly Sales 
+•	Monthly Sales 
+•	Most Popular Menu Items 
+Priority: Medium
+FR-058 Inventory Notification
+The system shall notify administrators when food or beverage inventory reaches a low level.
+Priority: Medium
+FR-059 Kitchen Order Status
+Kitchen staff shall update order status:
+•	Preparing 
+•	Ready 
+•	Served 
+Priority: Medium
+FR-060 Restaurant Dashboard
+The dashboard shall display:
+•	Orders Today 
+•	Revenue Today 
+•	Pending Orders 
+•	Completed Orders 
+Priority: Medium
+
+5.12 Website Content Management Module
+FR-061 Homepage Management
+Administrators shall edit homepage content.
+Priority: High
+FR-062 Room Content Management
+Administrators shall update room descriptions, pricing, and facilities displayed on the website.
+Priority: High
+FR-063 Gallery Management
+Administrators shall upload, edit, and remove:
+•	Room Images 
+•	Hotel Images 
+•	Restaurant Images 
+•	Garden Images 
+•	Staff Images 
+Priority: High
+FR-064 Blog Management
+Administrators shall publish hotel news, events, and promotional articles.
+Priority: Medium
+FR-065 Contact Information Management
+Administrators shall update:
+•	Phone Numbers 
+•	Email Address 
+•	Social Media Links 
+•	Google Maps Location 
+Priority: High
+5.13 Reporting & Analytics Module
+FR-066 Dashboard Analytics
+The dashboard shall display:
+•	Total Guests 
+•	Total Reservations 
+•	Available Rooms 
+•	Occupied Rooms 
+•	Monthly Revenue 
+•	Restaurant Revenue 
+Priority: High
+FR-067 Occupancy Reports
+Generate reports showing hotel occupancy rates over selected periods.
+Priority: High
+FR-068 Financial Reports
+Generate detailed financial reports including income, expenses, and profit summaries.
+Priority: High
+FR-069 Export Reports
+Users shall export reports in:
+•	PDF 
+•	Excel 
+•	CSV 
+Priority: Medium
+FR-070 Audit Logs
+The system shall record important activities, including:
+•	User Login 
+•	Reservations 
+•	Payments 
+•	Room Updates 
+•	Staff Actions 
+•	System Configuration Changes 
+Priority: High
+End of Chapter 5 – Part 3
+
