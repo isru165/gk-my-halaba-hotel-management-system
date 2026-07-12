@@ -1328,3 +1328,283 @@ Future Enhancements	FR-096 – FR-100
 Chapter 5 Summary
 This chapter defined 100 functional requirements for the GK My Halaba Hotel Management System. Each requirement has a unique identifier (FR-001 to FR-100), enabling traceability throughout analysis, design, implementation, testing, and maintenance. These requirements provide the foundation for the UML models, database schema, user interface, backend development, and system testing activities that follow in subsequent chapters.
 
+CHAPTER 6
+NON-FUNCTIONAL REQUIREMENTS
+6.1 Introduction
+Non-functional requirements define the quality attributes, operational characteristics, and constraints of the GK My Halaba Hotel Management Information System (HMIS). While functional requirements describe what the system shall do, non-functional requirements specify how the system shall perform under various conditions.
+These requirements address critical aspects such as performance, security, availability, reliability, usability, maintainability, and scalability. Compliance with these requirements will ensure that the system provides a secure, efficient, reliable, and user-friendly experience for hotel guests, receptionists, managers, administrators, accountants, and owners.
+To support traceability throughout the Software Development Life Cycle (SDLC), each non-functional requirement is assigned a unique identifier (NFR-XXX).
+6.2 Performance Requirements
+Performance requirements define the expected speed, responsiveness, and processing capability of the system.
+NFR-001 – Page Loading Performance
+Description
+The system shall load web pages quickly to provide a smooth user experience.
+Priority
+High
+Rationale
+Fast response times improve customer satisfaction and staff productivity.
+Acceptance Criteria
+•	Homepage loads within 3 seconds 
+•	Dashboard loads within 5 seconds 
+•	Search results display within 2 seconds 
+•	Reservation confirmation completes within 3 seconds 
+Verification Method
+Performance Testing
+NFR-002 – Database Response Time
+Description
+The database shall process queries efficiently.
+Priority
+High
+Rationale
+Efficient database operations reduce waiting time for users.
+Acceptance Criteria
+•	Standard queries complete within 2 seconds 
+•	Large reports complete within 10 seconds 
+Verification Method
+Database Performance Testing
+NFR-003 – Concurrent User Support
+Description
+The system shall support multiple users accessing the system simultaneously without significant performance degradation.
+Priority
+High
+Rationale
+Multiple staff members and guests may use the system at the same time.
+Acceptance Criteria
+The system shall support at least 100 concurrent users without critical performance issues.
+Verification Method
+Load Testing
+NFR-004 – Dashboard Performance
+Description
+Administrative dashboards shall display system statistics efficiently.
+Priority
+Medium
+Acceptance Criteria
+Dashboard statistics shall be generated within 5 seconds.
+Verification Method
+Performance Testing
+NFR-005 – Scalability of Data Processing
+Description
+The system shall efficiently manage increasing volumes of operational data.
+Priority
+High
+Data Includes
+•	Guest Records 
+•	Reservations 
+•	Rooms 
+•	Payments 
+•	Restaurant Orders 
+•	Images 
+•	Reports 
+Verification Method
+Scalability Testing
+6.3 Security Requirements
+Security requirements ensure confidentiality, integrity, and availability of hotel information.
+NFR-006 – User Authentication
+Description
+Only authenticated users shall access protected areas of the system.
+Priority
+High
+Acceptance Criteria
+Unauthorized users shall not access protected resources.
+Verification Method
+Security Testing
+NFR-007 – Password Security
+Description
+User passwords shall be securely encrypted before storage.
+Priority
+High
+Requirement
+•	bcrypt hashing 
+•	Passwords never stored in plain text 
+Verification Method
+Security Audit
+NFR-008 – Role-Based Access Control (RBAC)
+Description
+Users shall access only features permitted by their assigned role.
+Supported Roles
+•	Owner 
+•	Administrator 
+•	Manager 
+•	Receptionist 
+•	Accountant 
+•	Guest 
+Priority
+High
+Verification Method
+Authorization Testing
+NFR-009 – Secure Communication
+Description
+Data exchanged between users and the server shall be encrypted.
+Requirement
+HTTPS with SSL/TLS encryption.
+Priority
+High
+Verification Method
+Network Security Testing
+NFR-010 – SQL Injection Protection
+Description
+The application shall prevent SQL Injection attacks.
+Implementation
+•	Prepared Statements 
+•	Parameterized Queries 
+•	Input Validation 
+Priority
+High
+Verification Method
+Penetration Testing
+NFR-011 – File Upload Security
+Description
+The system shall validate uploaded files before storage.
+Allowed Files
+•	JPG 
+•	PNG 
+•	WEBP 
+•	PDF 
+Restrictions
+•	Maximum File Size 
+•	Virus Scanning (Future) 
+•	File Type Validation 
+Priority
+High
+Verification Method
+Security Testing
+NFR-012 – Session Management
+Description
+The system shall securely manage authenticated user sessions.
+Features
+•	Automatic Session Timeout 
+•	Secure Logout 
+•	Session Validation 
+•	Session Regeneration after Login 
+Priority
+High
+Verification Method
+Security Testing
+6.4 Availability Requirements
+Availability requirements define how reliably the system shall remain operational.
+NFR-013 – System Availability
+Description
+The hotel website and management system shall be available at all times except during scheduled maintenance.
+Target Availability
+99.5% uptime per year
+Priority
+High
+Verification Method
+Availability Monitoring
+NFR-014 – Backup Availability
+Description
+The system shall support automatic and manual database backups.
+Backup Frequency
+•	Daily Automatic Backup 
+•	Manual Backup on Demand 
+Priority
+High
+Verification Method
+Backup Testing
+NFR-015 – Disaster Recovery
+Description
+The system shall recover critical business data after unexpected failures.
+Recovery Objectives
+•	Database Recovery 
+•	Configuration Recovery 
+•	Image Recovery 
+Priority
+High
+Verification Method
+Recovery Testing
+6.5 Reliability Requirements
+Reliability ensures continuous and dependable operation.
+NFR-016 – Error Handling
+Description
+The system shall display meaningful error messages without exposing sensitive system information.
+Examples
+•	Invalid Login 
+•	Payment Failure 
+•	Reservation Conflict 
+Priority
+High
+Verification Method
+Functional Testing
+NFR-017 – Data Integrity
+Description
+The system shall maintain accurate and consistent information throughout all transactions.
+Applies To
+•	Reservations 
+•	Guests 
+•	Rooms 
+•	Payments 
+•	Restaurant Orders 
+Priority
+High
+Verification Method
+Database Integrity Testing
+NFR-018 – Transaction Reliability
+Description
+Critical operations shall be completed successfully before data is permanently saved.
+Examples
+•	Reservation Creation 
+•	Check-in 
+•	Check-out 
+•	Payment Recording 
+Priority
+High
+Verification Method
+Transaction Testing
+6.6 Usability Requirements
+Usability requirements ensure that users can easily understand and operate the system.
+NFR-019 – User-Friendly Interface
+Description
+The system shall provide an intuitive interface requiring minimal user training.
+Priority
+High
+Verification Method
+User Acceptance Testing (UAT)
+NFR-020 – Responsive Design
+Description
+The website shall adapt to different screen sizes.
+Supported Devices
+•	Desktop 
+•	Laptop 
+•	Tablet 
+•	Smartphone 
+Priority
+High
+Verification Method
+Responsive Design Testing
+NFR-021 – Multi-Language Support
+Description
+The public website shall support multiple languages.
+Supported Languages
+•	English 
+•	Amharic 
+Future versions may support additional Ethiopian languages.
+Priority
+High
+Verification Method
+Localization Testing
+NFR-022 – Navigation Simplicity
+Description
+Users shall access major system functions with minimal navigation.
+Examples
+•	Book Room 
+•	Check Availability 
+•	Contact Hotel 
+•	Login 
+•	Manage Reservations 
+Priority
+Medium
+Verification Method
+Usability Testing
+6.7 Traceability Preparation
+The non-functional requirements defined in this chapter will later be linked to:
+•	Software Architecture 
+•	Functional Requirements 
+•	UML Diagrams 
+•	Database Design 
+•	Test Cases 
+•	Security Policies 
+•	Deployment Architecture 
+This traceability ensures that every quality requirement can be validated during system development and testing.
+6.8 Chapter Summary
+This chapter defined the first set of non-functional requirements for the GK My Halaba Hotel Management Information System. These requirements establish expectations for system performance, security, availability, reliability, and usability. Together with the functional requirements presented in Chapter 5, they provide a comprehensive specification that will guide the design, implementation, testing, and deployment of the system.
+
