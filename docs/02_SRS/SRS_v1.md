@@ -2957,6 +2957,278 @@ UC-015	FR-027	—
 
 9.21 Part 2 Summary
 This section defined the primary operational use cases for reservation management and front-desk activities, including room searching, reservation creation and modification, room assignment, guest check-in, guest check-out, and reservation viewing. These use cases represent the core workflow of the GK My Halaba Hotel Management Information System and provide the basis for the corresponding UML diagrams and implementation.
+9.22 UC-016 – Record Payment
+Use Case ID
+UC-016
+Primary Actor
+•	Receptionist 
+•	Accountant 
+Description
+Allows authorized staff to record payments for hotel services, restaurant services, or other guest charges.
+Related Functional Requirements
+•	FR-050 Payment Management 
+Related Business Rules
+•	BR-019 Accepted Payment Methods 
+•	BR-020 Payment Recording 
+Preconditions
+•	Guest has an active reservation or outstanding invoice. 
+Trigger
+User selects Record Payment.
+Main Success Scenario
+1.	Search guest or reservation. 
+2.	Display outstanding balance. 
+3.	Select payment method. 
+4.	Enter payment amount. 
+5.	Confirm payment. 
+6.	System generates Payment ID. 
+7.	Payment is recorded. 
+8.	Receipt is generated. 
+Alternative Flow
+Partial payment is made.
+System updates the remaining balance.
+Exception Flow
+Payment fails.
+System displays an error message and records no transaction.
+Postconditions
+Payment is successfully recorded.
+Priority
+High
+9.23 UC-017 – Generate Invoice
+Use Case ID
+UC-017
+Primary Actor
+•	Receptionist 
+•	Accountant 
+Description
+Generates a detailed invoice for a guest.
+Related Functional Requirements
+•	FR-051 Invoice Management 
+Related Business Rules
+•	BR-018 Invoice Generation 
+Preconditions
+Guest has completed or active services.
+Main Success Scenario
+1.	Select reservation. 
+2.	Calculate all charges. 
+3.	Generate invoice. 
+4.	Display invoice. 
+5.	Print or download invoice. 
+Postconditions
+Invoice generated successfully.
+Priority
+High
+9.24 UC-018 – Manage Restaurant Orders
+Use Case ID
+UC-018
+Primary Actor
+Receptionist
+Description
+Records restaurant orders for hotel guests.
+Related Functional Requirements
+•	FR-060 Restaurant Management 
+Related Business Rules
+•	BR-023 Menu Management 
+•	BR-024 Restaurant Billing 
+Preconditions
+Restaurant menu exists.
+Main Success Scenario
+1.	Select guest. 
+2.	Select menu items. 
+3.	Enter quantities. 
+4.	Calculate total. 
+5.	Save order. 
+6.	Add charges to guest account or mark as paid. 
+Alternative Flow
+Customer pays immediately.
+Payment recorded instantly.
+Postconditions
+Restaurant order stored successfully.
+Priority
+Medium
+9.25 UC-019 – Update Restaurant Menu
+Use Case ID
+UC-019
+Primary Actor
+Administrator
+Description
+Allows administrators to add, update, or remove menu items.
+Related Functional Requirements
+•	FR-061 Menu Management 
+Related Business Rules
+•	BR-023 Menu Management 
+Preconditions
+Administrator logged in.
+Main Success Scenario
+1.	Open Menu Management. 
+2.	Add or edit menu item. 
+3.	Enter price. 
+4.	Save changes. 
+5.	Updated menu becomes available. 
+Postconditions
+Restaurant menu updated.
+Priority
+Medium
+9.26 UC-020 – Generate Reports
+Use Case ID
+UC-020
+Primary Actor
+•	Manager 
+•	Owner 
+•	Accountant 
+Description
+Generates operational and financial reports.
+Related Functional Requirements
+•	FR-070 Reporting 
+Related Business Rules
+•	BR-034 Daily Reports 
+•	BR-035 Financial Reports 
+Preconditions
+System contains operational data.
+Main Success Scenario
+1.	Select report type. 
+2.	Choose date range. 
+3.	Generate report. 
+4.	View report. 
+5.	Export as PDF or Excel. 
+Available Reports
+•	Daily Reservations 
+•	Occupancy Report 
+•	Revenue Report 
+•	Payment Report 
+•	Restaurant Sales 
+•	Staff Activity 
+Postconditions
+Report generated successfully.
+Priority
+High
+9.27 UC-021 – Manage Website Content
+Use Case ID
+UC-021
+Primary Actor
+Administrator
+Description
+Updates website information.
+Related Functional Requirements
+•	FR-080 Website Management 
+Related Business Rules
+•	BR-026 Public Information 
+Main Success Scenario
+1.	Open Website Dashboard. 
+2.	Edit content. 
+3.	Save changes. 
+4.	Publish updates. 
+Content Includes
+•	Home Page 
+•	About 
+•	Services 
+•	Rooms 
+•	Contact 
+•	Gallery 
+Postconditions
+Website updated.
+Priority
+Medium
+9.28 UC-022 – Manage Gallery
+Use Case ID
+UC-022
+Primary Actor
+Administrator
+Description
+Uploads and manages hotel images.
+Related Functional Requirements
+•	FR-081 Gallery Management 
+Related Business Rules
+•	BR-028 Gallery Management 
+Main Success Scenario
+1.	Select Upload. 
+2.	Choose images. 
+3.	Enter captions. 
+4.	Save. 
+5.	Images displayed publicly. 
+Postconditions
+Gallery updated.
+Priority
+Medium
+9.29 UC-023 – Publish Blog Post
+Use Case ID
+UC-023
+Primary Actor
+Administrator
+Description
+Creates and publishes blog articles or hotel news.
+Related Functional Requirements
+•	FR-082 Blog Management 
+Related Business Rules
+•	BR-029 Blog Publishing 
+Main Success Scenario
+1.	Create article. 
+2.	Upload featured image. 
+3.	Save draft. 
+4.	Publish. 
+Postconditions
+Blog published.
+Priority
+Low
+9.30 UC-024 – Submit Contact Form
+Use Case ID
+UC-024
+Primary Actor
+Guest
+Description
+Allows website visitors to contact the hotel.
+Related Functional Requirements
+•	FR-083 Contact Management 
+Main Success Scenario
+1.	Open Contact page. 
+2.	Enter name. 
+3.	Enter email or phone. 
+4.	Enter message. 
+5.	Submit. 
+Postconditions
+Message stored successfully.
+Priority
+Medium
+9.31 UC-025 – Manage System Backup
+Use Case ID
+UC-025
+Primary Actor
+Owner
+Administrator
+Description
+Creates or restores system backups.
+Related Functional Requirements
+•	FR-090 Backup Management 
+Related Business Rules
+•	BR-039 Backup 
+Main Success Scenario
+1.	Open Backup Module. 
+2.	Select Backup or Restore. 
+3.	Confirm action. 
+4.	System completes operation. 
+5.	Display success message. 
+Alternative Flow
+Backup fails.
+System logs the error.
+Postconditions
+Backup completed successfully.
+Priority
+High
+9.32 Traceability Matrix
+Use Case	Functional Requirement	Business Rule
+UC-016	FR-050	BR-019, BR-020
+UC-017	FR-051	BR-018
+UC-018	FR-060	BR-023, BR-024
+UC-019	FR-061	BR-023
+UC-020	FR-070	BR-034, BR-035
+UC-021	FR-080	BR-026
+UC-022	FR-081	BR-028
+UC-023	FR-082	BR-029
+UC-024	FR-083	—
+UC-025	FR-090	BR-039
+
+9.33 Part 3 Summary
+This section defined use cases related to payment processing, invoice generation, restaurant management, reporting, website content management, gallery administration, blog publishing, customer communication, and system backup. These use cases support the hotel's financial operations, online presence, and administrative management, completing the core operational interactions of the GK My Halaba Hotel Management Information System.
+
 
 
 
